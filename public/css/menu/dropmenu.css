@@ -1,0 +1,14 @@
+.show {
+    margin-top: 5px;
+}
+.dropdown-menu li{
+    padding-left: 17px;
+    padding-top: 3px;
+}
+.navbar-nav>li {
+    margin: auto;
+}
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    position: absolute;
+    margin-left: -100px;
+}
