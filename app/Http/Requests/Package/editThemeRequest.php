@@ -1,9 +1,10 @@
 <?php
-namespace App\Http\Requests\Admin;
+
+namespace App\Http\Requests\Package;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StorePermissionsRequest extends FormRequest
+class editThemeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,7 +24,7 @@ class StorePermissionsRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:permissions',
+            'name' => 'required|unique:themes'
         ];
     }
 }

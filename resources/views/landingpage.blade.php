@@ -171,7 +171,35 @@
             </div>
         </div>
     </section>
-
+    <section class="ftco-section bg price">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-7 heading-section ftco-animate text-center">
+                    <h2 class="mb-4">Pricing Plan</h2>
+                    <p>Pay per period and number of headsets.<p>
+                </div>
+            </div>
+            <div class="row">
+                @foreach($plans as $plan)
+                <div class="col-md-3 ftvo-animate">
+                <div class="block-7">
+                    <div class="text-center">
+                        <img class="icon" src="images/update/Compass.png"><br>
+                        <h2 class="heading">{{$plan->description}}</h2>
+                        <span class="price"><sup></sup> <span class="number">{{$plan->price}} EUR / 1 Day</span></span>
+                        <ul class="pricing-text mb-5">
+                            <li>maximum {{$plan->max_headsets}} headsets</li>
+                            <li>remote controller</li>
+                            <li>Select any content</li>
+                        </ul>
+                        <a href="order/{{$plan->id}}" class="btn btn-primary d-block px-2 py-3">Buy</a>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
     <section class="ftco-section bg-light">
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">

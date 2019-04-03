@@ -1,5 +1,5 @@
 <?php
-Route::get('/', function () { return redirect('/admin/home'); });
+Route::get('/', function () { return redirect('/home'); });
 
 // Authentication Routes...
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('auth.login');
@@ -25,13 +25,15 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::resource('users', 'Admin\UsersController');
     Route::post('users_mass_destroy', ['uses' => 'Admin\UsersController@massDestroy', 'as' => 'users.mass_destroy']);
 
-    
+    //theme
+    Route::resource('theme', 'Package\ThemeController');
+    Route::post('theme_mass_destroy', ['uses' => 'Package\ThemeController@massDestroy', 'as' => 'theme.mass_destroy']);
+    Route::resource('content','Package\ContentController');
 
 });
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
 Route::group(['middleware' => ['lang']], function() {
-    Route::get('/home', function(){
-        return view('landingpage');
-    });
+    Route::get('/home','Package\PlanController@index');
+    Route::get('order/{id}','PACKAGE\OrderController@getPlan');
 });

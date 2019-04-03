@@ -32,4 +32,8 @@ class Content extends Model
     {
         return $query->where('published', false);
     }
+    public function hasThemeTo($theme): bool
+    {
+        return $this->theme->contains('id', $theme->id);
+    }
 }
