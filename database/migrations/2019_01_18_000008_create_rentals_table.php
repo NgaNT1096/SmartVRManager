@@ -23,9 +23,6 @@ class CreateRentalsTable extends Migration
             $table->integer('plan_id')->unsigned();
             $table->foreign('plan_id')->references('id')->on('plans');
 
-            $table->integer('theme_content_id')->unsigned();
-            $table->foreign('theme_content_id')->references('id')->on('theme_contents');
-
             $table->timestamps();
             $table->softDeletes();
         });

@@ -33,10 +33,14 @@ return [
 		'content_add' => 'Add Content'
 	], 
 	'theme' => [
+		'title' => 'Topic Management',
 		'name' => 'Theme list'
 	],
 	'content' => [
-		'title' => 'Content'
+		'title' => 'Content',
+		'topic' => 'Topic',
+		'price' => 'Price',
+		'user_name' => 'Own user name'
 	],
 	'device-management' => [
 		'title' => 'Device Management',

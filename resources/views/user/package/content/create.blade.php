@@ -14,10 +14,27 @@
                 <div class="col-xs-12 form-group">
                     {!! Form::label('name', 'Name*', ['class' => 'control-label']) !!}
                     {!! Form::text('title', old('tile'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
-
+<!-- 
                     <div class="form-group">
                         <label>Theme:</label>
                         {!! Form::select('theme[]', $themes, old('theme'), ['class' => 'form-control select2', 'multiple' => 'multiple']) !!}
+
+                    </div> -->
+                    <div class="form-group">
+                        <label for="theme_id" class="control-label">Theme</label>
+
+                        <div class="">
+                            <select name="theme_id" class="form-control" required>
+                                @foreach ($themes as $theme)
+                                    <option value="{{ $theme->id }}">{{ $theme->name }}</option>
+                                @endforeach
+                            </select>
+                                @if ($errors->has('theme_id'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('theme_id') }}</strong>
+                                    </span>
+                                @endif
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>Type Content</label>

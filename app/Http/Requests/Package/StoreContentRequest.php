@@ -29,7 +29,7 @@ class StoreContentRequest extends FormRequest
             'type_data' => 'required',
             'price' =>'required',
             'link' =>'required',
-            'theme' => 'required'
+            'theme_id' => 'required'
         ];
     }
 }

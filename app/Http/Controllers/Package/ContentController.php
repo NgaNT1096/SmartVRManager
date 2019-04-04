@@ -9,12 +9,13 @@ use Illuminate\Support\Facades\Gate;
 use App\Model\Package\Content;
 use App\Model\Package\Theme;
 use App\Http\Requests\package\StoreContentRequest;
-
+use App\Config\constant;
+use Auth;
 class ContentController extends Controller
 {
     public function index()
     {
-        if (! Gate::allows('content_manage')) {
+        if (! Gate::allows(config('constants.CONTENT_PERMISSION'))) {
             return abort(401);
         }
 
@@ -25,11 +26,11 @@ class ContentController extends Controller
     
     public function create()
     {
-        if (! Gate::allows('content_manage')) {
+        if (! Gate::allows(config('constants.CONTENT_PERMISSION'))) {
             return abort(401);
         }
-        $themes = Theme::get()->pluck('name', 'name');
 
+        $themes = Theme::orderBy('name')->get();
         return view('user.package.content.create', compact('themes'));
     }
         /**
@@ -40,12 +41,12 @@ class ContentController extends Controller
      */
     public function store(StoreContentRequest $request)
     {
-        if (! Gate::allows('users_manage')) {
+        if (! Gate::allows(config('constants.CONTENT_PERMISSION'))) {
             return abort(401);
         }
-        $content = Content::create($request->except('theme'));
-        $content->theme = $request->input('theme') ? $request->input('theme') : [];
-
+        $content = Content::create($request->except('user_id'));
+        $content->user_id = Auth::user()->id;
+        $content->save();
         return redirect()->route('admin.content.index');
     }
     /**
@@ -56,7 +57,7 @@ class ContentController extends Controller
      */
     public function edit($id)
     {
-        if (! Gate::allows('content_manage')) {
+        if (! Gate::allows(config('constants.CONTENT_PERMISSION'))) {
             return abort(401);
         }
         $themes = Theme::get()->pluck('name', 'name');
@@ -75,7 +76,7 @@ class ContentController extends Controller
      */
     public function update(UpdateRolesRequest $request, $id)
     {
-        if (! Gate::allows('content_manage')) {
+        if (! Gate::allows(config('constants.CONTENT_PERMISSION'))) {
             return abort(401);
         }
         $content = Content::findOrFail($id);
@@ -95,7 +96,7 @@ class ContentController extends Controller
      */
     public function destroy($id)
     {
-        if (! Gate::allows('content_manage')) {
+        if (! Gate::allows(config('constants.CONTENT_PERMISSION'))) {
             return abort(401);
         }
         $content = Content::findOrFail($id);
@@ -111,7 +112,7 @@ class ContentController extends Controller
      */
     public function massDestroy(Request $request)
     {
-        if (! Gate::allows('content_manage')) {
+        if (! Gate::allows(config('constants.CONTENT_PERMISSION'))) {
             return abort(401);
         }
         if ($request->input('ids')) {

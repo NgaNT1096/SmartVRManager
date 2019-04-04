@@ -21,12 +21,13 @@ class CreateContentsTable extends Migration
             $table->string('link');
             $table->float('price');
 
-            $table->timestamps(); 
-
             $table->integer('theme_id')->unsigned()->nullable();
             $table->foreign('theme_id')->references('id')->on('themes');
+
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
+
+            $table->timestamps(); 
             $table->softDeletes(); 
         });
     }

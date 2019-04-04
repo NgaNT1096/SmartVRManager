@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('global.content-management.title')</h3>
+    <h3 class="page-title">@lang('global.theme.title')</h3>
     <p>
         <a href="{{ route('admin.theme.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
     </p>

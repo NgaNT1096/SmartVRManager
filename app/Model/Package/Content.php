@@ -12,28 +12,14 @@ class Content extends Model
         'type_data',
         'link',
         'price',
-        'slug',
-        'published'
+        'theme_id',
         
     ];
-    public function Theme_Contents(){
-        return $this->belongsToMany('App\Model\Package\ThemeContent');
-    }
-    public function ower()
-    {
-        return $this->belongsTo(User::class);
-    }
-    public function scopePublished($query)
-    {
-        return $query->where('published', true);
+    public function themes(){
+        return $this->belongsTo('App\Model\Package\Theme','theme_id');
     }
 
-    public function scopeUnpublished($query)
-    {
-        return $query->where('published', false);
-    }
-    public function hasThemeTo($theme): bool
-    {
-        return $this->theme->contains('id', $theme->id);
+    public function users(){
+        return $this->belongsTo('App\User','user_id');
     }
 }

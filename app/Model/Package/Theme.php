@@ -9,8 +9,8 @@ class Theme extends Model
     protected $fillable = [
         'name'
     ];
-    public function content()
+    protected function contents()
     {
-        return $this->hasMany('App\Model\Package\Theme')->withPivot('content');
+        return $this->hasMany('App\Model\Package\Content');
     }
 }

@@ -18,6 +18,9 @@
                     <tr>
                         <th style="text-align:center;"><input type="checkbox" id="select-all" /></th>
                         <th>@lang('global.content.title')</th>
+                        <th>@lang('global.content.topic')</th>
+                        <th>@lang('global.content.user_name')</th>
+                        <th>@lang('global.content.price')</th>
                         <th>&nbsp;</th>
 
                     </tr>
@@ -27,8 +30,14 @@
                     @if (count($contents) > 0)
                         @foreach ($contents as $content)
                             <tr data-entry-id="{{ $content->id }}">
-                                
+                                <td></td>
                                 <td>{{ $content->title }}</td>
+                                <td>
+                                    @foreach ($content->themes()->pluck('name') as $theme)
+                                        <span class="label label-info label-many">{{ $theme }}</span>
+                                    @endforeach
+                                </td>
+                                <td>{{$content->users()->pluck('name')}}</td>
                                 <td>{{ $content->price }}</td>
                                 
                                 <td>
