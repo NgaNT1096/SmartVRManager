@@ -10347,7 +10347,6 @@ h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5 {
     margin: 20px;
     font-weight: 700;
     display: inline-block;
-    text-transform: uppercase
 }
 
 .block-7 .heading-2 {
@@ -10356,7 +10355,15 @@ h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5 {
     letter-spacing: 1px;
     font-weight: 600
 }
-
+.row-recomment{
+    margin-top: 3em;
+}
+.recommemt-text{
+    background: #6b76fe57;
+    border-radius: 14px;
+    padding: 5px;
+    margin-left: 50%;
+}
 .block-7 .price {
     margin: 0;
     padding: 0;
@@ -10613,8 +10620,6 @@ textarea.form-control {
 }
 
 .ftco-section {
-    padding: 7em 0;
-    position: relative
 }
 
 @media(max-width: 767.98px) {

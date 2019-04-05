@@ -14,7 +14,7 @@ class ThemeController extends Controller
 {
     public function index()
     {
-        if (! Gate::allows('theme_manage')) {
+        if (! Gate::allows(config('constants.THEME_PERMISSION'))) {
             return abort(401);
         }
 
@@ -24,7 +24,7 @@ class ThemeController extends Controller
     }
     public function create()
     {
-        if (! Gate::allows('theme_manage')) {
+        if (! Gate::allows(config('constants.THEME_PERMISSION'))) {
             return abort(401);
         }
         return view('user.package.theme.create');
@@ -35,7 +35,7 @@ class ThemeController extends Controller
      */
     public function store(addThemeRequest $request)
     {
-        if (! Gate::allows('theme_manage')) {
+        if (! Gate::allows(config('constants.THEME_PERMISSION'))) {
             return abort(401);
         }
         Theme::create($request->all());
@@ -50,7 +50,7 @@ class ThemeController extends Controller
      */
     public function edit($id)
     {
-        if (! Gate::allows('theme_manage')) {
+        if (! Gate::allows(config('constants.THEME_PERMISSION'))) {
             return abort(401);
         }
         $theme = Theme::findOrFail($id);
@@ -66,7 +66,7 @@ class ThemeController extends Controller
      */
     public function update(editThemeRequest $request, $id)
     {
-        if (! Gate::allows('theme_manage')) {
+        if (! Gate::allows(config('constants.THEME_PERMISSION'))) {
             return abort(401);
         }
         $theme = Theme::findOrFail($id);
@@ -85,7 +85,7 @@ class ThemeController extends Controller
      */
     public function destroy($id)
     {
-        if (! Gate::allows('theme_manage')) {
+        if (! Gate::allows(config('constants.THEME_PERMISSION'))) {
             return abort(401);
         }
         $theme = Theme::findOrFail($id);
@@ -101,7 +101,7 @@ class ThemeController extends Controller
      */
     public function massDestroy(Request $request)
     {
-        if (! Gate::allows('users_manage')) {
+        if (! Gate::allows(config('constants.THEME_PERMISSION'))) {
             return abort(401);
         }
         if($request->input('ids')){

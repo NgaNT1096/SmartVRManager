@@ -3,7 +3,7 @@
 @section('content')
     <h3 class="page-title">@lang('global.content.title')</h3>
     {!! Form::open(['method' => 'POST', 'route' => ['admin.content.store']]) !!}
-
+    
     <div class="panel panel-default">
         <div class="panel-heading">
             @lang('global.app_create')
@@ -52,7 +52,7 @@
                     </div>
                     <div class="form-group">
                         <label>Upload Video</label>
-                        <input id="link" type="file" name="link" accept="">
+                        <input id="link" onclick="getTypeData();" type="file" name="link" accept="">
                     </div>
                     <div class="form-group">
                         <label>Price:</label>
@@ -69,7 +69,24 @@
             
         </div>
     </div>
+    <script>
+    function getTypeData(){
+        var type = document.getElementById("type_data");
+        var value_type = type.options[type.selectedIndex].value;
 
+        console.log(value_type);
+        if(value_type == 'video'){
+            document.getElementById("link").accept = ".mp4";
+        }
+        else if(value_type == 'image'){
+            document.getElementById("link").accept = "image/*";
+        }
+        else{
+            document.getElementById("link").accept = ".zip";
+            
+        }
+    }
+</script>
     {!! Form::submit(trans('global.app_save'), ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
 @stop

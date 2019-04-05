@@ -9,7 +9,10 @@ use Illuminate\Support\Facades\Gate;
 use App\Model\Package\Content;
 use App\Model\Package\Theme;
 use App\Http\Requests\package\StoreContentRequest;
+use Illuminate\Support\Facades\Validator;
 use App\Config\constant;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\DB;
 use Auth;
 class ContentController extends Controller
 {
@@ -18,8 +21,12 @@ class ContentController extends Controller
         if (! Gate::allows(config('constants.CONTENT_PERMISSION'))) {
             return abort(401);
         }
-
-        $contents = Content::all();
+        if(Auth::user()->name === "Admin"){
+            $contents = Content::all();
+        }else{
+            $contents = Content::where('user_id',Auth::user()->id)->get();
+        }
+        
 
         return view('user.package.content.index', compact('contents'));
     }
@@ -44,9 +51,11 @@ class ContentController extends Controller
         if (! Gate::allows(config('constants.CONTENT_PERMISSION'))) {
             return abort(401);
         }
+        
         $content = Content::create($request->except('user_id'));
         $content->user_id = Auth::user()->id;
         $content->save();
+
         return redirect()->route('admin.content.index');
     }
     /**
@@ -122,5 +131,24 @@ class ContentController extends Controller
                 $entry->delete();
             }
         }
+    }
+    public function handUploadVideo($request)
+    {
+        if($request->hasFile('link')){
+            $image = $request->file('link');
+            $fileName   = time() . '.' . $image->getClientOriginalExtension();
+
+            $img = Image::make($image->getRealPath());
+            $img->resize(120, 120, function ($constraint) {
+                $constraint->aspectRatio();                 
+            });
+
+            $img->stream(); // <-- Key point
+
+            //dd();
+            Storage::disk('local')->put('images/1/smalls'.'/'.$fileName, $img, 'public');
+            
+        }
+
     }
 }

@@ -9,6 +9,6 @@ class OrderController extends Controller
 {
     public function getPlan($id){
         $plan = Plan::find($id);
-        return view('user/order',compact('plan'));
+        return view('page/order',compact('plan'));
     }
 }

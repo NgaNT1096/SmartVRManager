@@ -52,7 +52,7 @@
             @endcan
 
             <!-- content management -->
-            @can('content_manage')
+            @can(config('constants.CONTENT_PERMISSION'))
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-users"></i>
@@ -62,7 +62,7 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-
+                    @can(config('constants.THEME_PERMISSION'))
                     <li class="{{ $request->segment(2) == 'themes' ? 'active active-sub' : '' }}">
                         <a href="{{ route('admin.theme.index') }}">
                             <i class="fa fa-briefcase"></i>
@@ -71,6 +71,7 @@
                             </span>
                         </a>
                     </li>
+                    @endcan
                     <li class="{{ $request->segment(2) == 'content' ? 'active active-sub' : '' }}">
                         <a href="{{ route('admin.content.index') }}">
                             <i class="fa fa-user"></i>

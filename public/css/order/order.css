@@ -46,6 +46,18 @@ body {
     background-position: 50% 0;
     background-image: url("../../images/order/order-1.png");
 }
+.order-forms.step2 .step-counter  {
+    background-position: 50% 0;
+    background-image: url("../../images/order/order-2.png");
+}
+.order-forms.step3 .step-counter {
+    background-position: 50% 0;
+    background-image: url("../../images/order/order-3.png");
+}
+.order-forms.step4 .step-counter {
+    background-position: 50% 0;
+    background-image: url("../../images/order/order-3.png");
+}
 .order-forms .step-counter {
     padding-top: 6em;
     background-repeat: no-repeat;
