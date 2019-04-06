@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="css/home/style.css">
     <link rel="stylesheet" href="css/order/order.css">
     <link rel="stylesheet" href="css/menu/dropmenu.css">
+    <link rel="stylesheet" href="css/order/dashboard.css">
+    <link rel="stylesheet" href="css/template/button.css">
     <!---*** Start: JQuery 3.3.1 version. ***--->
     <script language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!---*** End: JQuery 3.3.1 version. ***--->

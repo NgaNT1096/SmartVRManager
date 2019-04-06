@@ -13,5 +13,6 @@ return [
     'number_device' => 'Số lượng thiết bị',
     'start_date' => 'Ngày bắt đầu thuê',
     'end_date' => 'Ngày trả',
-    'payment' => 'Hình thức thanh toán'
+    'payment' => 'Hình thức thanh toán',
+    'thank' => 'Cám ơn, chúng tôi sẽ liên hệ với bạn sớm nhất có thể!  '
 ];

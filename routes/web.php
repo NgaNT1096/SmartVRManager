@@ -48,4 +48,10 @@ Route::group(['middleware' => ['lang']], function() {
     Route::get('/plan',function(){
         return view('page/plan');
     });
+    Route::get('/user/dashboard',function(){
+        return view('page/dashboard/newUser');
+    });
+    Route::get('/button',function(){
+        return view('template/button');
+    });
 });

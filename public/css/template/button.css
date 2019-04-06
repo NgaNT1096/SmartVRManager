@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700");
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wireframe {
+    margin: 3em;
+}
+.btn-contanted {
+    color: #FFFFFF;
+    background-color: #3D5AFE;
+    border-color: #3D5AFE;
+
+}
+button {
+  border: 3px solid #222;
+  background: transparent;
+  overflow: hidden;
+  width: 100%;
+  outline: none;
+}
+button span {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #222;
+  display: block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+button span:hover {
+  cursor: pointer;
+}
+
+.circle {
+  display: block;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.075);
+  border-radius: 50%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+.circle.animate {
+  -webkit-animation: effect 0.65s linear;
+          animation: effect 0.65s linear;
+}
+
+@-webkit-keyframes effect {
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(2.5);
+            transform: scale(2.5);
+  }
+}
+
+@keyframes effect {
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(2.5);
+            transform: scale(2.5);
+  }
+}

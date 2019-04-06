@@ -45,8 +45,8 @@
                 </div>
             </section>
         </main>
-    </div>
-    <script type="text/javascript">
+</div>
+<script type="text/javascript">
 var startDate;
 var endDate;
 

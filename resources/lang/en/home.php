@@ -11,4 +11,6 @@ return [
     'detail_title' => 'Virtual Reality Technology',
     'descripition' => 'SmartVR is an advanced virtual reality experience platform.',
     'try_now' => 'Try now'
+
+    
 ];
