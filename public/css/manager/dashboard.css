@@ -10,9 +10,44 @@
 .stats {
     font-size: 16px !important;
 }
+label {
+    font-size: 11px;
+    color: aliceblue;
+}
 .table-title {
     text-align: left;
 }
 .foot-center {
     text-align: center !important;
+}
+.is_rental {
+    background-color: #36AF47;
+    border-radius: 3px;
+    padding: 3px;
+}
+.wait_payment {
+    background-color: #F7981C;
+    border-radius: 3px;
+    padding: 3px;
+}
+.is_done {
+    background-color: #B2B2B2;
+    border-radius: 3px;
+    padding: 3px;
+}
+.about_expire {
+    background-color: #ED1C24;
+    border-radius: 3px;
+    padding: 3px;
+}
+.wait_process {
+    background-color: #1CAEED;
+    border-radius: 3px;
+    padding: 3px;
+}
+#hero-wrap {
+    background-color: #B2B2B2;
+}
+.table-bordered td, .table-bordered th {
+    border: 1px solid #ffffff !important;
 }

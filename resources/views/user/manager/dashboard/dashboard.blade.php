@@ -91,7 +91,7 @@
                                 <tbody>
                                     <tr data-entry-id="">
                                                 <td>BD0123</td>
-                                                <td class="status">Đang thuê</td>
+                                                <td class="status"><label class="is_rental">@lang('manager.is_rent')</label></td>
                                                 <td>Gói 1</td>
                                                 <td>20</td>
                                                 <td>20/04/2019</td>
@@ -101,7 +101,7 @@
                                     </tr>   
                                     <tr data-entry-id="">
                                                 <td>BD0123</td>
-                                                <td class="status">Đang thuê</td>
+                                                <td class="status"><label class="wait_payment">@lang('manager.wait_payment')</label></td>
                                                 <td>Gói 1</td>
                                                 <td>20</td>
                                                 <td>20/04/2019</td>
@@ -111,7 +111,7 @@
                                     </tr>   
                                     <tr data-entry-id="">
                                                 <td>BD0123</td>
-                                                <td class="status">Đang thuê</td>
+                                                <td class="status"><label class="is_done">@lang('manager.done')</label></td>
                                                 <td>Gói 1</td>
                                                 <td>20</td>
                                                 <td>20/04/2019</td>
@@ -121,7 +121,7 @@
                                     </tr>   
                                     <tr data-entry-id="">
                                                 <td>BD0123</td>
-                                                <td class="status">Đang thuê</td>
+                                                <td class="status"><label class="about_expire">@lang('manager.about_expire')</label></td>
                                                 <td>Gói 1</td>
                                                 <td>20</td>
                                                 <td>20/04/2019</td>
@@ -129,11 +129,21 @@
                                                 <td>Nguyễn Thị Nga</td>
                                                 <td><button class="btn btn-primary">@lang('manager.renewed')</button></td>
                                     </tr>   
+                                    <tr data-entry-id="">
+                                                <td>BD0123</td>
+                                                <td class="status"><label class="wait_process">@lang('manager.wait_process')</label></td>
+                                                <td>Gói 1</td>
+                                                <td>20</td>
+                                                <td>20/04/2019</td>
+                                                <td>22/04/2019</td>
+                                                <td>Nguyễn Thị Nga</td>
+                                                <td><button class="btn btn-primary">@lang('manager.renewed')</button></td>
+                                    </tr>  
                                 </tbody>
                             </table>    
                             </div>
                             <div class="card-footer">
-                                <i class=" foot-center"><a>show_more</a></i>
+                                <i class="fa fa-angle-down foot-center"><a href="{{route('admin.permissions.create')}}">show_more</a></i>
                             </div>
                         </div>
                         </div>
