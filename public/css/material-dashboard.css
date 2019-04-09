@@ -735,9 +735,7 @@
   border-radius: 6px;
 }
 
-.card .card-footer {
-  display: flex;
-  align-items: center;
+.card .card-footer {  
   background-color: transparent;
   border: 0;
 }

@@ -49,9 +49,12 @@ Route::group(['middleware' => ['lang']], function() {
         return view('page/plan');
     });
     Route::get('/user/dashboard',function(){
-        return view('page/dashboard/newUser');
+        return view('user/manager/dashboard/newUser');
     });
     Route::get('/button',function(){
         return view('template/button');
+    });
+    Route::get('/user/manager',function(){
+        return view('user/manager/dashboard/dashboard');
     });
 });

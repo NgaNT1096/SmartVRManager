@@ -1,0 +1,18 @@
+.table-rental {
+    background-color: rgb(255, 255, 255);
+}
+.card-category {
+    font-size: 22px !important;
+}
+.card-title {
+    font-size: 50px;
+}
+.stats {
+    font-size: 16px !important;
+}
+.table-title {
+    text-align: left;
+}
+.foot-center {
+    text-align: center !important;
+}

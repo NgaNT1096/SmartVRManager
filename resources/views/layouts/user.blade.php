@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="css/menu/dropmenu.css">
     <link rel="stylesheet" href="css/order/dashboard.css">
     <link rel="stylesheet" href="css/template/button.css">
+    <link rel="stylesheet" href="css/manager/dashboard.css">
+
     <!---*** Start: JQuery 3.3.1 version. ***--->
     <script language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!---*** End: JQuery 3.3.1 version. ***--->
@@ -61,7 +63,7 @@
 
     <script src="js/home/scrollax.min.js.js.php" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
     <script src="js/home/main.js.js.php" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
-    <script src="js/home/bootstrap-datepicker.js.js.php" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
 
     <script src="cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js.js.php" data-cf-settings="4244c3f1d98ded40e1b73ba9-|49" defer=""></script>
