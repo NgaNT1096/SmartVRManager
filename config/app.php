@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => 'false',
 
     /*
     |--------------------------------------------------------------------------
@@ -198,7 +198,7 @@ return [
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
 
         //debug
-        Barryvdh\Debugbar\ServiceProvider::class,
+        // Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -253,7 +253,7 @@ return [
         'Image'        => Intervention\Image\Facades\Image::class,
         'Form'         => Collective\Html\FormFacade::class,
         'Html'         => Collective\Html\HtmlFacade::class,
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        // 'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];
