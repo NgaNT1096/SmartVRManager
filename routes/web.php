@@ -30,6 +30,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::post('theme_mass_destroy', ['uses' => 'Package\ThemeController@massDestroy', 'as' => 'theme.mass_destroy']);
     Route::resource('content','Package\ContentController');
 
+    Route::get('upload','Package\ContentController@upload');
+    Route::post('upload','Package\ContentController@upload');
 });
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 

@@ -8,9 +8,12 @@ use App\SecretOtp;
 use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+
 class AuthController extends Controller
 {
-    
+    public function index(){
+        return response()->json("nguyen thi nga",200);
+    }
     // api
     public function signin(Request $request)
     {

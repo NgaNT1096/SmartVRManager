@@ -58,6 +58,10 @@ class ContentController extends Controller
 
         return redirect()->route('admin.content.index');
     }
+    public function upload(Request $request){
+        $path = $request->file('link')->store('upload');
+        echo $path;
+    }
     /**
      * Show the form for editing Role.
      *
