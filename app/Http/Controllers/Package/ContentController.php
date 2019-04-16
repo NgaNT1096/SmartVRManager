@@ -52,8 +52,20 @@ class ContentController extends Controller
             return abort(401);
         }
 
-        $content = Content::create($request->except('user_id'));
-        $content->user_id = Auth::user()->id;
+        $content = Content::create($request->except('created_by_id'));
+        $content->created_by_id = Auth::getUser()->id ;
+        $link = config('medialibrary.media_model');
+        $content->link = 
+
+        // $content = Content::create ([
+        //     'title'
+        //     'description'
+        //     'type_date'
+        //     'link'
+        //     'price'
+        //     'theme_id'
+        //     'created_by_id'
+        // ]);
         $content->save();
 
 
