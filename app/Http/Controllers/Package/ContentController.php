@@ -74,13 +74,15 @@ class ContentController extends Controller
                 $fileSize = $request->file('link')->getSize();
                 $mine = $request->file('link')->getMimeType();
 
-                $uploadPath = public_path('/upload/video'); 
+                $uploadPath = public_path('/upload'); 
+                // Bắt đầu chuyển file vào thư mục
+                $request->file('link')->move($uploadPath, $fileName);
 
                 $content = new Content;
                 $content->title = $request->input('title');
                 $content->description = $request->input('description');
                 $content->type_data = $request->input('type_data');
-                $content->link = '/upload/video/' .$fileName ;
+                $content->link = '/upload/' .$fileName ;
                 $content->price = $request->input('price');
                 $content->created_by_id = Auth::getUser()->id ;
                 $content->theme_id = $request->input('theme_id');
@@ -93,6 +95,12 @@ class ContentController extends Controller
     public function upload(Request $request){
         $path = $request->file('link')->store('upload');
         echo $path;
+    }
+    public function getDownload($id){
+        $content = Content::findOrFail($id);
+        $file = public_path()."/" . $content->link ;
+        //return Response::download($file);
+        var_dump($file);
     }
     /**
      * Show the form for editing Role.
@@ -168,23 +176,5 @@ class ContentController extends Controller
             }
         }
     }
-    public function handUploadVideo($request)
-    {
-        if($request->hasFile('link')){
-            $image = $request->file('link');
-            $fileName   = time() . '.' . $image->getClientOriginalExtension();
 
-            $img = Image::make($image->getRealPath());
-            $img->resize(120, 120, function ($constraint) {
-                $constraint->aspectRatio();                 
-            });
-
-            $img->stream(); // <-- Key point
-
-            //dd();
-            Storage::disk('local')->put('images/1/smalls'.'/'.$fileName, $img, 'public');
-            
-        }
-
-    }
 }

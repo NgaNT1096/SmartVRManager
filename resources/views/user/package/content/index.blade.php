@@ -41,8 +41,11 @@
                                 <td>{{ $content->price }}</td>
                                 
                                 <td>
-                                    <a href="{{url('$content->link')}}" download="{{$content->link}}" class="btn btn-xs btn-success" target="_blank" >Download</a>
+                                <!-- download -->
+                                    <a href="" class="btn btn-xs btn-success">@lang('global.app_download')</a>
+                                <!-- edit -->
                                     <a href="{{ route('admin.content.edit',[$content->id]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>
+                                <!-- delete -->
                                     {!! Form::open(array(
                                         'style' => 'display: inline-block;',
                                         'method' => 'DELETE',

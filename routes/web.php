@@ -28,7 +28,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     //theme
     Route::resource('theme', 'Package\ThemeController');
     Route::post('theme_mass_destroy', ['uses' => 'Package\ThemeController@massDestroy', 'as' => 'theme.mass_destroy']);
+    //content
     Route::resource('content','Package\ContentController');
+    Route::get('content/download/{id}','Package\ContentController@getDownload')->name('content.download');
 
     Route::get('upload','Package\ContentController@upload');
     Route::post('upload','Package\ContentController@upload');

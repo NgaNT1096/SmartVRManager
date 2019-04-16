@@ -77,5 +77,6 @@ return [
 	'app_back_to_list' => 'Back to list',
 	'app_dashboard' => 'Dashboard',
 	'app_delete' => 'Delete',
+	'app_download' => 'Download',
 	'global_title' => 'SmartVR',
 ];
