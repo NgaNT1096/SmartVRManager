@@ -14,6 +14,8 @@ use App\Config\constant;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\DB;
 use Auth;
+use Illuminate\Support\Facades\Storage;
+use App\User;
 class ContentController extends Controller
 {
     public function index()
@@ -21,14 +23,14 @@ class ContentController extends Controller
         if (! Gate::allows(config('constants.CONTENT_PERMISSION'))) {
             return abort(401);
         }
+        $user_model= User::findOrFail(Auth::getUser()->id);
         if(Auth::user()->name === "Admin"){
             $contents = Content::all();
         }else{
-            $contents = Content::where('user_id',Auth::user()->id)->get();
+            $contents = Content::where('created_by_id',Auth::getUser()->id)->get();
         }
         
-
-        return view('user.package.content.index', compact('contents'));
+        return view('user.package.content.index', compact('contents','user_model'));
     }
     
     public function create()
@@ -46,31 +48,47 @@ class ContentController extends Controller
      * @param  \App\Http\Requests\StoreRolesRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreContentRequest $request)
+    public function store(Request $request)
     {
         if (! Gate::allows(config('constants.CONTENT_PERMISSION'))) {
             return abort(401);
         }
 
-        $content = Content::create($request->except('created_by_id'));
-        $content->created_by_id = Auth::getUser()->id ;
-        $link = config('medialibrary.media_model');
-        $content->link = 
+        //$content = Content::create($request->except('created_by_id'));
+        //$content->created_by_id = Auth::getUser()->id ;
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|string|max:255|unique:contents',
+            'description' => 'required|string|max:255',
+            'type_data' => 'required',
+            'price' =>'required',
+            'link' =>'required',
+            'theme_id' => 'required'
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator->errors());
+        }else {
+            
+            if ($request->file('link')->isValid()) {
+                $fileExtension = $request->file('link')->getClientOriginalExtension();
+                $fileName = $request->file('link')->getClientOriginalName('link');
+                $fileSize = $request->file('link')->getSize();
+                $mine = $request->file('link')->getMimeType();
 
-        // $content = Content::create ([
-        //     'title'
-        //     'description'
-        //     'type_date'
-        //     'link'
-        //     'price'
-        //     'theme_id'
-        //     'created_by_id'
-        // ]);
-        $content->save();
+                $uploadPath = public_path('/upload/video'); 
 
+                $content = new Content;
+                $content->title = $request->input('title');
+                $content->description = $request->input('description');
+                $content->type_data = $request->input('type_data');
+                $content->link = '/upload/video/' .$fileName ;
+                $content->price = $request->input('price');
+                $content->created_by_id = Auth::getUser()->id ;
+                $content->theme_id = $request->input('theme_id');
+                $content->save();
 
-
-        //return redirect()->route('admin.content.index');
+                return redirect()->route('admin.content.index');
+            }
+        }
     }
     public function upload(Request $request){
         $path = $request->file('link')->store('upload');

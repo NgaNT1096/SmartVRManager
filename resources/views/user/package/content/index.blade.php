@@ -37,10 +37,11 @@
                                         <span class="label label-info label-many">{{ $theme }}</span>
                                     @endforeach
                                 </td>
-                                <td>{{$content->users()->pluck('name')}}</td>
+                                <td>{{$user_model->name}}</td>
                                 <td>{{ $content->price }}</td>
                                 
                                 <td>
+                                    <a href="{{url('$content->link')}}" download="{{$content->link}}" class="btn btn-xs btn-success" target="_blank" >Download</a>
                                     <a href="{{ route('admin.content.edit',[$content->id]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>
                                     {!! Form::open(array(
                                         'style' => 'display: inline-block;',

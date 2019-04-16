@@ -24,8 +24,8 @@ class CreateContentsTable extends Migration
             $table->integer('theme_id')->unsigned()->nullable();
             $table->foreign('theme_id')->references('id')->on('themes');
 
-            $table->integer('user_id')->unsigned()->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('created_by_id')->unsigned()->nullable();
+            $table->foreign('created_by_id')->references('id')->on('users');
 
             $table->timestamps(); 
             $table->softDeletes(); 

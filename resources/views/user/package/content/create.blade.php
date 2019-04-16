@@ -2,8 +2,7 @@
 
 @section('content')
     <h3 class="page-title">@lang('global.content.title')</h3>
-    {!! Form::open(['method' => 'POST', 'route' => ['admin.content.store']]) !!}
-    
+    {!! Form::open(['method' => 'POST','enctype' => 'multipart/form-data' , 'route' => ['admin.content.store']]) !!}
     <div class="panel panel-default">
         <div class="panel-heading">
             @lang('global.app_create')
