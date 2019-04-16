@@ -47,7 +47,13 @@ return [
             'driver' => 'local',
             'root'   => storage_path('app'),
         ],
-        
+        'media' => [
+            'driver'     => 'local',
+            'root'       => public_path('uploads'),
+            'url'        => env('APP_URL') . '/uploads',
+            'visibility' => 'public',
+        ],
+
         'public' => [
             'driver'     => 'local',
             'root'       => storage_path('app/public'),
@@ -65,6 +71,15 @@ return [
         'csv' => [
             'driver' => 'local',
             'root'   => storage_path().'/csv',
+        ],
+        'uploads' => [
+            'driver' => 'local',
+            'root' => public_path('uploads'),
+        ],
+
+        'uploads_test' => [
+            'driver' => 'local',
+            'root' => public_path('uploads/test')
         ],
 
     ],

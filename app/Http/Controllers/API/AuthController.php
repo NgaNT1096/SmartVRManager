@@ -12,8 +12,10 @@ use Illuminate\Support\Facades\Validator;
 class AuthController extends Controller
 {
     public function index(){
-        return response()->json("nguyen thi nga",200);
+        $users = User::all();
+        return response()->json($users,200);
     }
+
     // api
     public function signin(Request $request)
     {

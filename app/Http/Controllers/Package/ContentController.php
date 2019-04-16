@@ -51,12 +51,14 @@ class ContentController extends Controller
         if (! Gate::allows(config('constants.CONTENT_PERMISSION'))) {
             return abort(401);
         }
-        
+
         $content = Content::create($request->except('user_id'));
         $content->user_id = Auth::user()->id;
         $content->save();
 
-        return redirect()->route('admin.content.index');
+
+
+        //return redirect()->route('admin.content.index');
     }
     public function upload(Request $request){
         $path = $request->file('link')->store('upload');
