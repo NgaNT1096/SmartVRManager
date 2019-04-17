@@ -47,6 +47,14 @@ return [
 		'device_list' => 'List Device',
 		'device_add' => 'Add List'
 	],
+	'device' => [
+		'title' => 'Upload device',
+		'name' => 'Name',
+		'des' => 'Type Device',
+		'status' => 'Status',
+		'rental_by' => "Rental by",
+		'no_rent' => 'no rent'
+	],
 	'order-management' => [
 		'title' => 'Order Management',
 		'order_list' => 'List Order',

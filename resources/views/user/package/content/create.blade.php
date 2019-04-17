@@ -13,12 +13,6 @@
                 <div class="col-xs-12 form-group">
                     {!! Form::label('name', 'Name*', ['class' => 'control-label']) !!}
                     {!! Form::text('title', old('tile'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
-<!-- 
-                    <div class="form-group">
-                        <label>Theme:</label>
-                        {!! Form::select('theme[]', $themes, old('theme'), ['class' => 'form-control select2', 'multiple' => 'multiple']) !!}
-
-                    </div> -->
                     <div class="form-group">
                         <label for="theme_id" class="control-label">Theme</label>
 

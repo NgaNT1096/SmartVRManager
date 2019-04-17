@@ -9,10 +9,14 @@
     margin: 3em;
 }
 .btn-contanted {
-    color: #FFFFFF;
-    background-color: #3D5AFE;
-    border-color: #3D5AFE;
+  color: #3D5AFE ;
+  border: 1px solid #3D5AFE !important;
+  box-sizing: border-box;
+  border-radius: 4px !important;
 
+}
+.btn-contanted a {
+  color: #3D5AFE !important;
 }
 button {
   border: 3px solid #222;
@@ -23,10 +27,7 @@ button {
 }
 button span {
   font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
   font-weight: 700;
-  font-size: 1.5em;
-  color: #222;
   display: block;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -34,7 +35,7 @@ button span {
           user-select: none;
   position: relative;
   overflow: hidden;
-  padding: 20px;
+  padding: 10px;
 }
 button span:hover {
   cursor: pointer;

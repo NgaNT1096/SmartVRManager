@@ -17,7 +17,7 @@ class CreateOculusesTable extends Migration
             $table->increments('id')->unsigned();
             $table->string('name');
             $table->string('description');
-            $table->string('status')->nullable();
+            $table->string('status')->default("no rent");
             $table->timestamps();
 
             $table->integer('rental_id')->unsigned()->nullable();

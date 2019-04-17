@@ -85,7 +85,7 @@
             @endcan
 
             <!-- device management -->
-            @can('device_manage')
+            @can(config('constants.DEVICE_PERMISSION'))
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-users"></i>
@@ -97,18 +97,10 @@
                 <ul class="treeview-menu">
 
                     <li class="{{ $request->segment(2) == 'permissions' ? 'active active-sub' : '' }}">
-                        <a href="{{ route('admin.permissions.index') }}">
+                        <a href="{{ route('admin.device.index') }}">
                             <i class="fa fa-briefcase"></i>
                             <span class="title">
                                 @lang('global.device-management.device_list')
-                            </span>
-                        </a>
-                    </li>
-                    <li class="{{ $request->segment(2) == 'roles' ? 'active active-sub' : '' }}">
-                        <a href="{{ route('admin.roles.index') }}">
-                            <i class="fa fa-briefcase"></i>
-                            <span class="title">
-                                @lang('global.device-management.device_add')
                             </span>
                         </a>
                     </li>

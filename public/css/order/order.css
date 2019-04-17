@@ -15,8 +15,7 @@ body {
 
 .container {
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding: 30px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -176,4 +175,10 @@ body {
 }
 small {
     font-size: 80%;
+}
+/* .heading-title {
+    margin-top: 100px;
+} */
+.section-step1 {
+    display: none;
 }

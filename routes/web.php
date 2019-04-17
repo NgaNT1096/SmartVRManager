@@ -33,7 +33,10 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::get('content/download/{id}','Package\ContentController@getDownload')->name('content.download');
 
     Route::get('upload','Package\ContentController@upload');
-    Route::post('upload','Package\ContentController@upload');
+    Route::post('upload','Package\ContentController@upload'); 
+
+    //device
+    Route::resource('device','Package\DeviceController');
 });
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 

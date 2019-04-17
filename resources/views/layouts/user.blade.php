@@ -65,7 +65,7 @@
     <script src="js/home/main.js.js.php" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
-
+    <script  src="js/template/button.js"></script>
     <script src="cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js.js.php" data-cf-settings="4244c3f1d98ded40e1b73ba9-|49" defer=""></script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">

@@ -8173,7 +8173,7 @@ a.bg-dark:hover,a.bg-dark:focus,button.bg-dark:hover,button.bg-dark:focus {
 }
 .nav-item img{
     width: 100%;
-    padding: 4px;
+    padding: 6px;
 }
 .nav-item img:hover{
     opacity: 0.6;
