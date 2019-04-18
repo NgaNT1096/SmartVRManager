@@ -14,7 +14,7 @@
             </div>
         </div>
     </div>
-    <section class="ftco-section services-section bg-light">
+    <section class="ftco-section feature-section  services-section bg-light">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 text-center heading-section ftco-animate">
                     <h2 class="mb-4"><span></span>Use Case</h2>
@@ -70,22 +70,38 @@
             </div>
             <div class="container">
                 <div class="row d-flex">
-                    <div class="col-md-12 feature-row feature-left">
-                        <h3 class="heading-feature"><b>Đa nền tảng</b></h3>
-                        <p>Hoạt động với hầu hết các tai nghe VR và <br>nền tảng. Cài đặt trực tiếp và dễ dàng từ <br> các cửa hàng ứng dụng.</p>
+                    <div class="col-md-12 feature_row ">
+                        <div class="info_feature col-md-6">
+                            <h3 class="heading-feature"><b>Đa nền tảng</b></h3>
+                            <p>Hoạt động với hầu hết các tai nghe VR và <br>nền tảng. Cài đặt trực tiếp và dễ dàng từ <br> các cửa hàng ứng dụng.</p>
+                        </div>
+                        <div class="img_feature col-md-5">
+                            <img src="images/feature/flatform.png">
+                        </div>                       
                     </div>
-                    <div class="col-md-12 feature-row feature-right">
-                        <h3 class="heading-feature"><b>Upload 360° content</b></h3>
-                        <p>Dễ dàng upload và quản lý nội dung <br> Dễ dàng kích hoạt nội dung để <br> phát trực tiếp từ thiết bị.</p>
+                    <div class="col-md-12 feature_row  ">
+                        <div class="img_feature col-md-6">
+                            <img src="images/feature/content.png">
+                        </div>  
+                        <div class="info_feature col-md-5 feature-right">
+                            <h3 class="heading-feature"><b>Upload 360° content</b></h3>
+                            <p>Dễ dàng upload và quản lý nội dung <br> Dễ dàng kích hoạt nội dung để <br> phát trực tiếp từ thiết bị.</p>
+                        </div>
+                                             
                     </div>
-                    <div class="col-md-12 feature-row feature-left">
-                        <h3 class="heading-feature"><b>Giám sát và quản lý</b></h3>
-                        <p>Kiểm tra kết nối, trạng thái pin và tạo danh sách phát <br>với điều khiển từ xa. </p>
+                    <div class="col-md-12 feature_row ">                  
+                        <div class="info_feature col-md-6">
+                            <h3 class="heading-feature"><b>Giám sát và quản lý</b></h3>
+                            <p>Kiểm tra kết nối, trạng thái pin và tạo danh sách phát <br>với điều khiển từ xa. </p>
+                        </div>
+                        <div class="img_feature col-md-5">
+                            <img src="images/feature/manage.png">
+                        </div> 
                     </div>
                 </div>
             </div>
     </section>
-    <section class="ftco-section testimony-section bg-light">
+    <section class="ftco-section feature-section testimony-section bg-light">
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 text-center heading-section ftco-animate">
@@ -171,7 +187,7 @@
             </div>
         </div>
     </section>
-    <section class="ftco-section bg price">
+    <section class="ftco-section feature-section bg price">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-7 heading-section ftco-animate text-center">
@@ -192,7 +208,7 @@
                             <li>remote controller</li>
                             <li>Select any content</li>
                         </ul>
-                        <a href="order/{{$plan->id}}" class="btn btn-primary d-block px-2 py-3">Buy</a>
+                        <a href="page/order" class="btn btn-primary d-block px-2 py-3">Buy</a>
                         </div>
                     </div>
                 </div>
@@ -200,7 +216,7 @@
             </div>
         </div>
     </section>
-    <section class="ftco-section bg-light">
+    <section class="ftco-section feature-section bg-light">
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section text-center ftco-animate">

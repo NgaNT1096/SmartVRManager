@@ -15,6 +15,16 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
+            $table->datetime('time_start');
+            $table->datetime('time_end');
+            $table->float('total_price');
+
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
+
+            $table->integer('plan_id')->unsigned()->nullable();
+            $table->foreign('plan_id')->references('id')->on('plans');
+
             $table->timestamps();
         });
     }

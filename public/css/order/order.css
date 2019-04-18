@@ -15,7 +15,7 @@ body {
 
 .container {
     width: 100%;
-    padding: 30px;
+    padding: 10px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -181,4 +181,19 @@ small {
 } */
 .section-step1 {
     display: none;
+}
+.feature_row {
+    position: relative;
+    display: inline-block;
+}
+.info_feature{
+    display: inline-block;
+    padding: auto;
+}
+.img_feature {
+    display: inline-block;
+}
+.img-feature img{
+    width: 100%;
+
 }

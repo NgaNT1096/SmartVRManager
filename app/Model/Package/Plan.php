@@ -14,5 +14,7 @@ class Plan extends Model
         'listFunction'
 
     ];
-
+    public function order(){
+        return $this->hasMany('App\Model\Order');
+    }
 }

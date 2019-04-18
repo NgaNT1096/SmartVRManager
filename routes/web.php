@@ -42,8 +42,11 @@ Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
 Route::group(['middleware' => ['lang']], function() {
     Route::get('/home','Package\PlanController@index');
-    Route::get('order/{id}','Package\OrderController@getPlan');
-    Route::get('order/{id}/infor',function(){
+    Route::get('page/order','Package\OrderController@viewOrder');
+    Route::post('page/order','Package\OrderController@order');
+
+    Route::get('page/order/{id}','Package\OrderController@getPlan');
+    Route::get('page/order/{id}/infor',function(){
         return view('page/infor');
     });
     Route::get('order/{id}/confirm',function(){

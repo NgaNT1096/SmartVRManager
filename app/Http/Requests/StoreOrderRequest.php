@@ -24,7 +24,12 @@ class StoreOrderRequest extends FormRequest
     public function rules()
     {
         return [
-            
+            'name' => 'required|string',
+            'time_start' => 'required',
+            'time_end' => 'required',
+            'total_price' =>'required',
+            'plan_id' =>'required',
+            'user_id' => 'required'
         ];
     }
 }

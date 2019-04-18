@@ -38,7 +38,7 @@
                                     <li>remote controller</li>
                                     <li>Select any content</li>
                                 </ul>
-                                <a href="#order-step1"><button data-scroll="#order-step1" class=" btn-contanted buy scrollbutton"><span>Chọn gói</span></button></a>
+                                <a href=""><button class=" btn-contanted buy scrollbutton"><span>Chọn gói</span></button></a>
                                 <!-- <a href="order/{{$plan->id}}" class="btn btn-primary d-block px-2 py-3">Buy</a> -->
                                 </div>
                             </div>
@@ -71,7 +71,6 @@
                                     <li>Select any content</li>
                                 </ul>
                                 <button class=" btn-contanted buy"><span >Chọn gói</span></button>
-                                <!-- <a href="order/{{$plan->id}}" class="btn btn-primary d-block px-2 py-3">Buy</a> -->
                                 </div>
                             </div>
                         </div>
@@ -91,7 +90,7 @@
                             <div class="card-body p-3 py-4">
                                 <h2 class='text-primary text-center my-4'>License information</h2>
 
-                                <form action="order/{{$plan->id}}" method="POST" enctype="multipart/form-data">                            
+                                <form action="page/order/{{$plan->id}}" method="POST" enctype="multipart/form-data">                            
                                     <div id="pricingcalculator" data-deviceamount="" data-period="" data-startdate="" data-syncbox="">
                                         <div>
                                             <div class="form-row license-input">
