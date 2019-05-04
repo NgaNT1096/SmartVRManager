@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\DB;
 use Auth;
 use Illuminate\Support\Facades\Storage;
 use App\User;
+use Response;
+
 class ContentController extends Controller
 {
     public function index()
@@ -75,7 +77,7 @@ class ContentController extends Controller
                 $destinationPath = public_path('/uploads');
                 $imagePath = $destinationPath. "/".  $name;
                 $fileupload->move($destinationPath, $name);
-                $content->link = $name;
+                $content->link = "/uploads/".$name;
             }
                
                 $content->title = $request->input('title');
@@ -97,8 +99,7 @@ class ContentController extends Controller
     public function getDownload($id){
         $content = Content::findOrFail($id);
         $file = public_path()."/" . $content->link ;
-        //return Response::download($file);
-        var_dump($file);
+        return Response::download($file);
     }
     /**
      * Show the form for editing Role.
