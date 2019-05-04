@@ -67,29 +67,27 @@ class ContentController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator->errors());
         }else {
+            $content = new Content;
             
             if ($request->file('link')->isValid()) {
-                $fileExtension = $request->file('link')->getClientOriginalExtension();
-                $fileName = $request->file('link')->getClientOriginalName('link');
-                $fileSize = $request->file('link')->getSize();
-                $mine = $request->file('link')->getMimeType();
-
-                $uploadPath = public_path('/upload'); 
-                // Bắt đầu chuyển file vào thư mục
-                $request->file('link')->move($uploadPath, $fileName);
-
-                $content = new Content;
+                $fileupload = $request->file('link');
+                $name = str_slug($request->title).'.'.$fileupload->getClientOriginalExtension();
+                $destinationPath = public_path('/uploads');
+                $imagePath = $destinationPath. "/".  $name;
+                $fileupload->move($destinationPath, $name);
+                $content->link = $name;
+            }
+               
                 $content->title = $request->input('title');
                 $content->description = $request->input('description');
                 $content->type_data = $request->input('type_data');
-                $content->link = '/upload/' .$fileName ;
                 $content->price = $request->input('price');
                 $content->created_by_id = Auth::getUser()->id ;
                 $content->theme_id = $request->input('theme_id');
                 $content->save();
 
                 return redirect()->route('admin.content.index');
-            }
+
         }
     }
     public function upload(Request $request){

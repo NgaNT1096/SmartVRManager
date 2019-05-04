@@ -4,7 +4,7 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model // tuong tu voi cart
+class Cart extends Model
 {
     protected $fillable = ['name', 'time_start', 'time_end','user_id', 'plan_id','total_price'];
 

@@ -20,7 +20,7 @@
                             <h2 class="heading">{{$plan->description}}</h2>
                             <span class="price"><sup></sup> <span class="number">{{$plan->price}} EUR / 1 Day</span></span>
                             <ul class="pricing-text mb-5">
-                                <li>maximum {{$plan->max_headsets}} headsets</li>
+                                <li>maximum {{$plan->max_headsets}}  headsets</li>
                                 <li>remote controller</li>
                                 <li>Select any content</li>
                             </ul>
