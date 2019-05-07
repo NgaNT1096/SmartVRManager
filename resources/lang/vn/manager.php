@@ -1,17 +1,18 @@
 <?php
 return [
-    'content_title' => 'Quản lý nội dung tải lên',
-    'content_des' => 'Nội dung tải lên',
+    'content_title' => 'Management upload content',
+    'content_des' => 'Content upload',
 
-    'device_title' => 'Gia hạn ngay',
-    'device_des' => 'Số kính đang thuê',
+    'device_title' => 'Renewed',
+    'device_des' => 'Number device is renting',
     'device_expert' => 'Hết hạn: ',
 
-    'package_title' => 'Nâng cấp gói',
-    'package_des' => 'Gói thuê',
+    'package_title' => 'Package rental ',
+    'package_des' => 'Upgrade package',
     'package_detail' => 'Nội dung miễn phí',
 
     'table_name' => 'Lịch sử thuê',
+    'table_content' => 'Nội dung tải lên',
     'id' => 'ID',
     'status' => 'Trạng thái',
     'package' => 'Gói',
@@ -24,6 +25,9 @@ return [
     'done' => 'Hoàn tất',
     'about_expire' => 'Sắp hết hạn',
     'wait_process' => 'Chờ xử lý',
-    'renewed' => 'Gia hạn'
+    'renewed' => 'Gia hạn',
 
+    'user-history' => 'Lịch sử giao dịch',
+    'user-setting' => 'Cài đặt',
+    'logout' => 'Đăng xuất'
 ];

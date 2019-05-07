@@ -27,10 +27,19 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <img class="avatar" src="images/update/avatar.png">  <i class="fa fa-caret-down"></i>
                         </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="admin/dashboard"><i class="fa fa-user fa-fw"></i> Your Manager App</a></li>
-                            <li><a href="#"><i class="fa fa-user fa-fw"></i> Your Account</a></li>
-                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a></li>
+                        <ul class="dropdown-menu dropdown-user show">
+                            <li>
+                                <div class="avatar-drop">
+                                    <img class="avatar-detail" src="images/update/avatar.png">
+                                </div>
+                                <div class="info-user">
+                                    <p><b>{{{ Auth::getUser()->name  }}}</b><br><label class='email-user'>{{{ Auth::getUser()->email }}}</label></p>
+                                    
+                                </div>
+                            </li>
+                            <li><a href="admin/dashboard"><i class="fa fa-user fa-fw"></i>{{ trans('manager.user-history') }}</a></li>
+                            <li><a href="#"><i class="fa fa-user fa-fw"></i>{{ trans('manager.user-setting') }}</a></li>
+                            <li><a href="#"><i class="fa fa-gear fa-fw"></i>{{ trans('manager.logout') }}</a></li>
                             <li>
                             </li>
                         </ul>

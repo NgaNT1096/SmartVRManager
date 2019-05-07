@@ -12,6 +12,7 @@ return [
     'package_detail' => 'Nội dung miễn phí',
 
     'table_name' => 'Lịch sử thuê',
+    'table_content' => 'Nội dung tải lên',
     'id' => 'ID',
     'status' => 'Trạng thái',
     'package' => 'Gói',
@@ -24,6 +25,9 @@ return [
     'done' => 'Hoàn tất',
     'about_expire' => 'Sắp hết hạn',
     'wait_process' => 'Chờ xử lý',
-    'renewed' => 'Gia hạn'
+    'renewed' => 'Gia hạn',
 
+    'user-history' => 'Transaction history',
+    'user-setting' => 'Setting',
+    'logout' => 'Log Out'
 ];
