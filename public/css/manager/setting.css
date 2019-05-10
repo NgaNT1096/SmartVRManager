@@ -1,0 +1,14 @@
+.user-setting label {
+    font-size: 13px !important;
+    color: #03030366 !important;
+}
+.avatar-user{
+    float: left;
+    margin: 5%;
+}
+.sidebar img {
+    width: 100%;
+}
+.main_info_user {
+    margin: auto;
+}

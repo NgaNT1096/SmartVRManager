@@ -29,5 +29,10 @@ return [
 
     'user-history' => 'Transaction history',
     'user-setting' => 'Setting',
-    'logout' => 'Log Out'
+    'logout' => 'Log Out',
+
+    'profile_setting' => 'Profile Setting',
+    'address' =>'Address',
+    'country' => "Country",
+    'city' =>'City'
 ];

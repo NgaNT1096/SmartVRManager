@@ -67,4 +67,8 @@ Route::group(['middleware' => ['lang']], function() {
     Route::get('/user/manager',function(){
         return view('user/manager/dashboard/dashboard');
     });
+
+    Route::get('/user/setting',function(){
+        return view('user/manager/setting/userprofile');
+    });
 });

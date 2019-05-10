@@ -33,15 +33,12 @@
                                     <img class="avatar-detail" src="images/update/avatar.png">
                                 </div>
                                 <div class="info-user">
-                                    <p><b>{{{ Auth::getUser()->name  }}}</b><br><label class='email-user'>{{{ Auth::getUser()->email }}}</label></p>
-                                    
+                                    <p><b>{{{ Auth::getUser()->name  }}}</b><br><label class='email-user'>{{{ Auth::getUser()->email }}}</label></p>                                   
                                 </div>
                             </li>
                             <li><a href="admin/dashboard"><i class="fa fa-user fa-fw"></i>{{ trans('manager.user-history') }}</a></li>
                             <li><a href="#"><i class="fa fa-user fa-fw"></i>{{ trans('manager.user-setting') }}</a></li>
                             <li><a href="#"><i class="fa fa-gear fa-fw"></i>{{ trans('manager.logout') }}</a></li>
-                            <li>
-                            </li>
                         </ul>
                         <!-- /.dropdown-user -->
                     </div>

@@ -8,6 +8,6 @@ Route::post('/user/login', 'API\AuthController@signin');
 Route::get('/getUser', 'API\AuthController@index');
 
 Route::group(['prefix'=>'content'], function(){
-  Route::get('/list/{otp}', 'API\ContentController@api_content');
+  Route::get('/list/{otp}', 'API\ContentController@index');
   Route::get('/download/{otp}/{id}', 'API\ContentController@download');
 });

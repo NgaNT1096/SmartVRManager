@@ -29,5 +29,8 @@ return [
 
     'user-history' => 'Lịch sử giao dịch',
     'user-setting' => 'Cài đặt',
-    'logout' => 'Đăng xuất'
+    'logout' => 'Đăng xuất',
+
+    'profile_setting' => 'Profile Setting',
+    'address' =>'Address'
 ];
