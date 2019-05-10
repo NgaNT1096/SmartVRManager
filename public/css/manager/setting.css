@@ -4,11 +4,14 @@
 }
 .avatar-user{
     float: left;
-    margin: 5%;
 }
 .sidebar img {
     width: 100%;
+    margin: 10px;
 }
 .main_info_user {
-    margin: auto;
+    margin-left: 30%;
+}
+.reset-account {
+
 }

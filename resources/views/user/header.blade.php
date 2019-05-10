@@ -25,7 +25,7 @@
                     <!-- /.dropdown -->
                     <div class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <img class="avatar" src="images/update/avatar.png">  <i class="fa fa-caret-down"></i>
+                            <img class="avatar" src="images/update/avatar.png">
                         </a>
                         <ul class="dropdown-menu dropdown-user show">
                             <li>
@@ -36,9 +36,15 @@
                                     <p><b>{{{ Auth::getUser()->name  }}}</b><br><label class='email-user'>{{{ Auth::getUser()->email }}}</label></p>                                   
                                 </div>
                             </li>
-                            <li><a href="admin/dashboard"><i class="fa fa-user fa-fw"></i>{{ trans('manager.user-history') }}</a></li>
-                            <li><a href="#"><i class="fa fa-user fa-fw"></i>{{ trans('manager.user-setting') }}</a></li>
-                            <li><a href="#"><i class="fa fa-gear fa-fw"></i>{{ trans('manager.logout') }}</a></li>
+                            @if(Auth::getUser()->name === 'Admin')
+                            <li><a href="admin/content"><i class="fa fa-user fa-fw"></i>{{ trans('manager.user-history') }}</a></li>
+                            <li><a href="user/setting"><i class="fa fa-user fa-fw"></i>{{ trans('manager.user-setting') }}</a></li>
+                            <li><a href="#logout" onclick="$('#logout').submit();"><i class="fa fa-gear fa-fw"></i>{{ trans('manager.logout') }}</a></li>
+                            @else
+                            <li><a href="user/dashboard"><i class="fa fa-user fa-fw"></i>{{ trans('manager.user-history') }}</a></li>
+                            <li><a href="user/setting"><i class="fa fa-user fa-fw"></i>{{ trans('manager.user-setting') }}</a></li>
+                            <li><a href="#logout" onclick="$('#logout').submit();"><i class="fa fa-gear fa-fw"></i>{{ trans('manager.logout') }}</a></li>
+                            @endif
                         </ul>
                         <!-- /.dropdown-user -->
                     </div>
@@ -49,3 +55,6 @@
             </div>
         </div>
     </nav>
+{!! Form::open(['route' => 'auth.logout', 'style' => 'display:none;', 'id' => 'logout']) !!}
+<button type="submit">@lang('global.logout')</button>
+{!! Form::close() !!}

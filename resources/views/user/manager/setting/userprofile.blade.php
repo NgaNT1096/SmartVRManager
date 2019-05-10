@@ -10,7 +10,7 @@
                             <div class="sidebar">
                                 <img src="images/update/avatar.png" >
                                 <div class="edit-avatar">
-                                    <button style="font-size:24px">Button <i class="fa fa-cloud-upload"></i></button>
+                                    <button class=" btn-contanted buy"><span >Upload Avatar <i class="fa fa-cloud-upload"></i></span></button>
                                 </div>
                             </div>
                         </div>
@@ -56,6 +56,15 @@
                                         <div class="col-12 col-md-12 form-group px-2 " >
                                             <label>@lang('order.detail_address')</label>
                                             <input type="text" id="address" name="address" class="form-control pull-right" placeholder="@lang('order.detail_address')"/>
+                                        </div>
+                                    </div>
+                                    <hr>
+                            </div>
+
+                            <div class="reset-account">
+                                    <div class="form-row license-input">      
+                                        <div class="col-12 col-md-3 form-group px-2" >                                 
+                                            <button class="buy"><span >Reset password</span></button>
                                         </div>
                                     </div>
                                     <hr>
