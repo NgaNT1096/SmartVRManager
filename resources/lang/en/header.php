@@ -10,13 +10,7 @@ return [
     'title' => 'Experience ',
     'detail_title' => 'Virtual Reality Technology',
     'descripition' => 'SmartVR is an advanced virtual reality experience platform.',
-    'try_now' => 'Try now',
+    'try_now' => 'Try now'
 
-    'home_user' => 'HOME',
-    'dashboard' => "DASHBOARD",
-    'content' => 'CONTENT',
-    'license' => 'LICENSE',
-    'support' => 'SUPPORT',
-    'upgrade' => 'Upgrade'
     
 ];

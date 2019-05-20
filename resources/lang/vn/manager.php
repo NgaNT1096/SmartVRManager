@@ -1,6 +1,6 @@
 <?php
 return [
-    'content_title' => 'Management upload content',
+    'content_title' => 'Content',
     'content_des' => 'Content upload',
 
     'device_title' => 'Renewed',

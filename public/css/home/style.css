@@ -30,7 +30,7 @@ article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section {
 body {
     margin: 0;
     font-family: work sans,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
-    font-size: 1rem;
+    font-size: 1.5rem !important;
     font-weight: 400;
     line-height: 1.5;
     color: #212529;
@@ -10588,7 +10588,7 @@ textarea.form-control {
     }
 }
 .ftco-section{
-    text-align: center;
+    /* text-align: center; */
 }
 .ftco-animate {
     opacity: 0;

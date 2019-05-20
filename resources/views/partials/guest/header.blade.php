@@ -7,10 +7,10 @@
             </button>
             <div class="navbar-collapse collapse" id="ftco-nav">
                 <ul class="navbar-nav navbar-center ml-auto">
-                    <li class="nav-item"><a href="{{ url('/user/dashboard') }}" class="nav-link">{{ trans('home.dashboard') }}</a></li>
-                    <li class="nav-item"><a href="{{ url('/user/manager') }} " class="nav-link">{{ trans('home.content') }}</a></li>
-                    <li class="nav-item"><a href="{{ url('/page/order') }} " class="nav-link">{{ trans('home.license') }}</a></li>
-                    <li class="nav-item"><a href="{{ url('/user/support') }} " class="nav-link">{{ trans('home.support') }}</a></li>
+                    <li class="nav-item active"><a href="index.html" class="nav-link">{{ trans('home.home') }}</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">{{ trans('home.devices') }}</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">{{ trans('home.price') }}</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">{{ trans('home.about_us') }}</a></li>
                 </ul>
 
                 <ul class="nav-user navbar-nav right">
@@ -24,7 +24,6 @@
                     @else
 
                     <div class="dropdown">
-                        <button class="upgrade">{{ trans('home.upgrade') }}</button>
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <img class="avatar" src="images/update/avatar.png">
                         </a>

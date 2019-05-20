@@ -55,8 +55,8 @@
                                                 </div>
                                                 <div class="col-12 col-md-6 form-group px-2 datepick" >
                                                     <label for="start_date">Start time - to date</label>
-                                                    <input type="text" id="datetimes" name="datetimes" class="form-control pull-right" />
-
+                                                    <input type="text" id="datetimes" onchange="showDate(this)" name="datetimes" class="form-control pull-right" />
+                                                    <p id="showdate"></p>
                                                 </div>
                                             </div>
                                             <div class="w-100 text-right total col-12">Total: <strong id="total-budget">€0</strong><br><small>Prices excluding VAT</small></div>
@@ -99,9 +99,12 @@ $(document).ready(function() {
     .click(function() {
        console.log($('input[name="datetimes"]').val());
     })
-    
 
  });
+ function showDate(input){
+        console.log('change date');
+        $('#showdate').html(input.val());
+}
  function changeColor(){
     var clicked = true;
     if(clicked){

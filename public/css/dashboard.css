@@ -91,3 +91,16 @@
 .more-content li img{
   width: 100%;
 }
+.right {
+  position: absolute;
+  right: 25px;
+}
+.center {
+  text-align: center;
+}
+.main-sidebar{
+  position: fixed !important;
+}
+.row {
+  height: 100%;
+}
