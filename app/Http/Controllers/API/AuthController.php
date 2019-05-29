@@ -45,14 +45,13 @@ class AuthController extends Controller
               'password' => $password
             ];
             $response = [
-                'msg' => 'User signin',
-                'user' => $user,
+                'msg' => 'success',
                 'code' => $code
             ];
             return response()->json($response, 200);
         }
         $response = [
-            'msg' => 'An error occurred'
+            'msg' => 'fail'
         ];
   
         return response()->json($response, 404);

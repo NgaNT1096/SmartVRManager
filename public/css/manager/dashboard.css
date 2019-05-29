@@ -10,6 +10,10 @@
 .stats {
     font-size: 16px !important;
 }
+label {
+    font-size: 11px;
+    color: aliceblue;
+}
 .table-title {
     text-align: left;
 }

@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/order/order.css">
     <link rel="stylesheet" href="css/menu/dropmenu.css">
     <link rel="stylesheet" href="css/order/dashboard.css">
-    <!-- <link rel="stylesheet" href="css/template/button.css"> -->
+    <link rel="stylesheet" href="css/template/button.css">
     <link rel="stylesheet" href="css/manager/dashboard.css">
     <link rel="stylesheet" href="css/manager/setting.css">
 

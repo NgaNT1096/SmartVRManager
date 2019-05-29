@@ -1,16 +1,16 @@
 
 <nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/home') }}">Smart<span>VR.</span></a>
+            <a class="navbar-brand" href="{{ URL("/") }}">Smart<span>VR.</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="glyphicon glyphicon-menu-hamburger"></i> Menu
+                <span class="oi oi-menu"></span> Menu
             </button>
-            <div class="navbar-collapse collapse" id="ftco-nav">
+            <div class="navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav navbar-center ml-auto">
-                    <li class="nav-item"><a href="{{ url('/user/dashboard') }}" class="nav-link">{{ trans('home.dashboard') }}</a></li>
-                    <li class="nav-item"><a href="{{ url('/user/manager') }} " class="nav-link">{{ trans('home.content') }}</a></li>
-                    <li class="nav-item"><a href="{{ url('/page/order') }} " class="nav-link">{{ trans('home.license') }}</a></li>
-                    <li class="nav-item"><a href="{{ url('/user/support') }} " class="nav-link">{{ trans('home.support') }}</a></li>
+                    <li class="nav-item active"><a href="index.html" class="nav-link">{{ trans('home.home') }}</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">{{ trans('home.devices') }}</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">{{ trans('home.price') }}</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">{{ trans('home.about_us') }}</a></li>
                 </ul>
 
                 <ul class="nav-user navbar-nav right">
@@ -22,9 +22,8 @@
                         <a href="{{url(Request::getPathInfo().'?lang=vn')}}"><img src="images/flat/vn.png"></a>
                     </li>
                     @else
-
+                    <!-- /.dropdown -->
                     <div class="dropdown">
-                        <button class="upgrade">{{ trans('home.upgrade') }}</button>
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <img class="avatar" src="images/update/avatar.png">
                         </a>
@@ -47,8 +46,9 @@
                             <li><a href="#logout" onclick="$('#logout').submit();"><i class="fa fa-gear fa-fw"></i>{{ trans('manager.logout') }}</a></li>
                             @endif
                         </ul>
+                        <!-- /.dropdown-user -->
                     </div>
-
+                    <!-- /.dropdown -->
                     @endif
 
                 </ul>
