@@ -8,6 +8,7 @@ use App\SecretOtp;
 use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -26,35 +27,38 @@ class AuthController extends Controller
         $email = $request->input('email');
         $password = $request->input('password');     
         if ($user = User::where('email', $email)->first()){
-           
-             $code = $this->generateCode();
-                //khi login tao ma code
-                $codeOtp = new SecretOtp([
-                    'code' => $code,
-                    'user_id' => $user->id,
-                    'max_device'=> 6,
-                    'num_request' => 0
-                ]);
-                if($code !== null){
-                    $codeOtp->save();
-                }
-  
+            if(Hash::check($password, $user->password)){
+                $code = $this->generateCode();
+                    //khi login tao ma code
+                    $codeOtp = new SecretOtp([
+                        'code' => $code,
+                        'user_id' => $user->id,
+                        'max_device'=> 6,
+                        'num_request' => 0
+                    ]);
+                    if($code !== null){
+                        $codeOtp->save();
+                    }
+    
 
-            $credentials = [
-              'email' => $email,
-              'password' => $password
-            ];
-            $response = [
-                'msg' => 'success',
-                'code' => $code
-            ];
-            return response()->json($response, 200);
+                $credentials = [
+                'email' => $email,
+                'password' => $password
+                ];
+                $response = [
+                    'msg' => 'success',
+                    'password'=>$user->password,
+                    'code' => $code
+                ];
+                return response()->json($response, 200);
+            }
+
         }
-        $response = [
-            'msg' => 'fail'
-        ];
-  
-        return response()->json($response, 404);
+            $response = [
+                'msg' => 'fail'
+            ];
+    
+            return response()->json($response, 404);
     }
 
     public function logout($userid){
