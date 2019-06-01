@@ -22,8 +22,7 @@ class AuthController extends Controller
     {
         $this->validate($request, [
             'email' => 'required|email',
-            'password' => 'required|min:5',
-            'version' => 'required'
+            'password' => 'required|min:5'
         ]);
         $email = $request->input('email');
         $password = $request->input('password');     
@@ -49,7 +48,6 @@ class AuthController extends Controller
                 ];
                 $response = [
                     'msg' => 'success',
-                    'version'=>$version,
                     'code' => $code
                 ];
                 return response()->json($response, 200);
