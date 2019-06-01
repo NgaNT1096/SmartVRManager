@@ -22,10 +22,12 @@ class AuthController extends Controller
     {
         $this->validate($request, [
             'email' => 'required|email',
-            'password' => 'required|min:5'
+            'password' => 'required|min:5',
+            'version' => 'required'
         ]);
         $email = $request->input('email');
         $password = $request->input('password');     
+        $version = $request->input('version');
         if ($user = User::where('email', $email)->first()){
             if(Hash::check($password, $user->password)){
                 $code = $this->generateCode();
@@ -47,7 +49,7 @@ class AuthController extends Controller
                 ];
                 $response = [
                     'msg' => 'success',
-                    'password'=>$user->password,
+                    'version'=>$version,
                     'code' => $code
                 ];
                 return response()->json($response, 200);

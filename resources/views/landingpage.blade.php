@@ -1,10 +1,10 @@
 @extends('layouts.user')
 
 @section('content')
-<div class="hero-wrap js-fullheight" style="background-image: url('images/update/background.png');" data-stellar-background-ratio="0.5">
+<div class="hero-wrap js-fullheight" style="background-image: url('images/update/background.png');" data-stellar-background-ratio="1">
         <div class="container">
             <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
-                <div class="col-xl-10 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+                <div class="col-xl-10" data-scrollax=" properties: { translateY: '70%' }">
                     <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span>{{ trans('home.title') }}</span><br><span>{{ trans('home.detail_title') }}</span></h1>
                     <p class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">{{ trans('home.descripition') }}</p>
                     <div id="timer" class="d-flex mb-3">
@@ -14,15 +14,15 @@
             </div>
         </div>
     </div>
-    <section class="ftco-section feature-section  services-section bg-light">
-            <div class="row justify-content-center mb-5 pb-3">
-                <div class="col-md-7 text-center heading-section ftco-animate">
+    <section class="feature-section services-section bg">
+            <div class="row">
+                <div class="col-md-7 text-center heading-section">
                     <h2 class="mb-4"><span></span>Use Case</h2>
                 </div>
             </div>
         <div class="container">
             <div class="row d-flex">
-                <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+                <div class="col-md-3">
                     <div class="media block-6 services d-block">
                         <div class="icon"><img src="images/update/learn.png"></div>
                         <div class="media-body">
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+                <div class="col-md-3 d-flex">
                     <div class="media block-6 services d-block">
                         <div class="icon"><img src="images/update/intertainment.png"></div>
                         <div class="media-body">
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+                <div class="col-md-3 ">
                     <div class="media block-6 services d-block">
                         <div class="icon"><img src="images/update/marketing.png"></div>
                         <div class="media-body">
@@ -49,7 +49,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+                <div class="col-md-3 ">
                     <div class="media block-6 services d-block">
                         <div class="icon"><img src="images/update/event.png"></div>
                         <div class="media-body">
@@ -63,7 +63,7 @@
     </section>
     <section class="feature-section services-section bg">
             <div class="row justify-content-center mb-5 pb-3">
-                <div class="col-md-7 text-center heading-section ftco-animate">
+                <div class="col-md-7 text-center heading-section ">
                     <h2 class="mb-4">Feature</h2>
                     <p>SmartVR cung cấp tất cả các tính năng bạn cần để kiểm soát và <br> theo dõi nội dung trên thiết bị thực tế ảo</p>
                 </div>
@@ -104,16 +104,16 @@
     <section class="ftco-section feature-section testimony-section bg-light">
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
-                <div class="col-md-7 text-center heading-section ftco-animate">
+                <div class="col-md-7 text-center heading-section">
                     <span class="subheading">Reviews</span>
                     <h2 class="mb-4"><span>Happy</span> Clients</h2>
                 </div>
             </div>
-            <div class="row ftco-animate">
+            <div class="row">
                 <div class="col-md-12">
-                    <div class="carousel-testimony owl-carousel ftco-owl">
+                    <div class="carousel-testimony">
                         <div class="item">
-                            <div class="testimony-wrap text-center py-4 pb-5">
+                            <div class="col-md-4 testimony-wrap text-center py-4 pb-5">
                                 <div class="user-img mb-4" style="background-image: url(images/person_1.jpg)">
                                     <span class="quote d-flex align-items-center justify-content-center">
                                         <i class="icon-quote-left"></i>
@@ -127,7 +127,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <div class="testimony-wrap text-center py-4 pb-5">
+                            <div class="col-md-4 testimony-wrap text-center py-4 pb-5">
                                 <div class="user-img mb-4" style="background-image: url(images/person_2.jpg)">
                                     <span class="quote d-flex align-items-center justify-content-center">
                                         <i class="icon-quote-left"></i>
@@ -141,7 +141,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <div class="testimony-wrap text-center py-4 pb-5">
+                            <div class="col-md-4 testimony-wrap text-center py-4 pb-5">
                                 <div class="user-img mb-4" style="background-image: url(images/person_3.jpg)">
                                     <span class="quote d-flex align-items-center justify-content-center">
                                         <i class="icon-quote-left"></i>
@@ -155,7 +155,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <div class="testimony-wrap text-center py-4 pb-5">
+                            <div class="col-md-4 testimony-wrap text-center py-4 pb-5">
                                 <div class="user-img mb-4" style="background-image: url(images/person_1.jpg)">
                                     <span class="quote d-flex align-items-center justify-content-center">
                                         <i class="icon-quote-left"></i>
@@ -169,7 +169,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <div class="testimony-wrap text-center py-4 pb-5">
+                            <div class="col-md-4 testimony-wrap text-center py-4 pb-5">
                                 <div class="user-img mb-4" style="background-image: url(images/person_1.jpg)">
                                     <span class="quote d-flex align-items-center justify-content-center">
                                         <i class="icon-quote-left"></i>
@@ -190,14 +190,14 @@
     <section class="ftco-section feature-section bg price">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-7 heading-section ftco-animate text-center">
+                <div class="col-md-7 heading-section text-center">
                     <h2 class="mb-4">Pricing Plan</h2>
                     <p>Pay per period and number of headsets.<p>
                 </div>
             </div>
             <div class="row">
                 @foreach($plans as $plan)
-                <div class="col-md-3 ftvo-animate">
+                <div class="col-md-3">
                 <div class="block-7">
                     <div class="text-center">
                         <img class="icon" src="images/update/Compass.png"><br>
@@ -219,13 +219,13 @@
     <section class="ftco-section feature-section bg-light">
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
-                <div class="col-md-7 heading-section text-center ftco-animate">
+                <div class="col-md-7 heading-section text-center">
                     <span class="subheading">Our Blog</span>
                     <h2><span>Recent</span> Blog</h2>
                 </div>
             </div>
             <div class="row d-flex">
-                <div class="col-md-4 d-flex ftco-animate">
+                <div class="col-md-4 d-flex">
                     <div class="blog-entry justify-content-end">
                         <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
                         </a>
@@ -244,7 +244,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 d-flex ftco-animate">
+                <div class="col-md-4 d-flex ">
                     <div class="blog-entry justify-content-end">
                         <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
                         </a>
@@ -263,7 +263,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 d-flex ftco-animate">
+                <div class="col-md-4 d-flex ">
                     <div class="blog-entry">
                         <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
                         </a>
@@ -289,7 +289,7 @@
         <div class="parallax-img d-flex align-items-center">
             <div class="container">
                 <div class="row d-flex justify-content-center">
-                    <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+                    <div class="col-md-7 text-center heading-section heading-section-white ">
                         <h2>Call to Action</h2>
                         <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
                         <div class="row d-flex justify-content-center mt-4 mb-4">
@@ -310,28 +310,28 @@
     <section class="ftco-section ftco-gallery bg-light">
         <div class="container-wrap">
             <div class="row no-gutters">
-                <div class="col-md-3 ftco-animate">
+                <div class="col-md-3">
                     <a href="images/image_1.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/image_1.jpg);">
                         <div class="icon mb-4 d-flex align-items-center justify-content-center">
                             <span class="icon-instagram"></span>
                         </div>
                     </a>
                 </div>
-                <div class="col-md-3 ftco-animate">
+                <div class="col-md-3">
                     <a href="images/image_2.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/image_2.jpg);">
                         <div class="icon mb-4 d-flex align-items-center justify-content-center">
                             <span class="icon-instagram"></span>
                         </div>
                     </a>
                 </div>
-                <div class="col-md-3 ftco-animate">
+                <div class="col-md-3">
                     <a href="images/image_3.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/image_3.jpg);">
                         <div class="icon mb-4 d-flex align-items-center justify-content-center">
                             <span class="icon-instagram"></span>
                         </div>
                     </a>
                 </div>
-                <div class="col-md-3 ftco-animate">
+                <div class="col-md-3">
                     <a href="images/image_4.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/image_4.jpg);">
                         <div class="icon mb-4 d-flex align-items-center justify-content-center">
                             <span class="icon-instagram"></span>
