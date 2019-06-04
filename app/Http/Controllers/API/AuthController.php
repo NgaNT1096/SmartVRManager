@@ -22,13 +22,14 @@ class AuthController extends Controller
     {
         $this->validate($request, [
             'email' => 'required|email',
-            'password' => 'required|min:5'
+            'password' => 'required|min:5',
+            'version' => 'required'
         ]);
         $email = $request->input('email');
-        $password = $request->input('password');     
+        $password = $request->input('password');
         $version = $request->input('version');
         if ($user = User::where('email', $email)->first()){
-            if(Hash::check($password, $user->password)){
+            if(Hash::check($password, $user->password) && $version == "1.1"){
                 $code = $this->generateCode();
                     //khi login tao ma code
                     $codeOtp = new SecretOtp([
@@ -40,7 +41,6 @@ class AuthController extends Controller
                     if($code !== null){
                         $codeOtp->save();
                     }
-    
 
                 $credentials = [
                 'email' => $email,
@@ -48,6 +48,7 @@ class AuthController extends Controller
                 ];
                 $response = [
                     'msg' => 'success',
+                    'version'=>$version,
                     'code' => $code
                 ];
                 return response()->json($response, 200);
@@ -57,7 +58,6 @@ class AuthController extends Controller
             $response = [
                 'msg' => 'fail'
             ];
-    
             return response()->json($response, 404);
     }
 

@@ -20,6 +20,7 @@
 
                         <th>@lang('global.users.fields.name')</th>
                         <th>@lang('global.users.fields.email')</th>
+                        <th>Status</th>
                         <th>@lang('global.users.fields.roles')</th>
                         <th>&nbsp;</th>
 
@@ -34,6 +35,17 @@
 
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
+                                <td>
+                                    @if($user->isOnline())
+                                        <li class="text-success">
+                                            Online
+                                        </li>
+                                    @else
+                                        <li class="text-muted">
+                                            Offline
+                                        </li>
+                                    @endif
+                                </td>
                                 <td>
                                     @foreach ($user->roles()->pluck('name') as $role)
                                         <span class="label label-info label-many">{{ $role }}</span>

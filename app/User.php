@@ -5,7 +5,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 use Hash;
-
+use Cache;
 /**
  * Class User
  *
@@ -21,8 +21,6 @@ class User extends Authenticatable
     use HasRoles;
 
     protected $fillable = ['name', 'email', 'password', 'remember_token'];
-    
-    
     /**
      * Hash password
      * @param $input
@@ -32,8 +30,6 @@ class User extends Authenticatable
         if ($input)
             $this->attributes['password'] = app('hash')->needsRehash($input) ? Hash::make($input) : $input;
     }
-    
-    
     public function role()
     {
         return $this->belongsToMany(Role::class, 'role_user');
@@ -45,6 +41,8 @@ class User extends Authenticatable
     public function order(){
         return $this->hasMany('App\Model\Order');
     }
-    
-    
+    public function isOnline()
+    {
+        return Cache::has('user-is-online-' . $this->id);
+    }
 }
