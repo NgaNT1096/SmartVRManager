@@ -90,7 +90,7 @@
                             <div class="card-body p-3 py-4">
                                 <h2 class='text-primary text-center my-4'>License information</h2>
 
-                                <form action="page/order/{{$plan->id}}" method="POST" enctype="multipart/form-data">                            
+                                <form action="page/order/{{$plan->id}}" method="POST" enctype="multipart/form-data">
                                     <div id="pricingcalculator" data-deviceamount="" data-period="" data-startdate="" data-syncbox="">
                                         <div>
                                             <div class="form-row license-input">

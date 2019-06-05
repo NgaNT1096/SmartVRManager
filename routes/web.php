@@ -43,12 +43,12 @@ Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 Route::group(['middleware' => ['lang']], function() {
     Route::get('/home','Package\PlanController@index');
     Route::get('page/order','Package\OrderController@viewOrder');
-    Route::post('page/order','Package\OrderController@order');
+    Route::post('page/order','Package\OrderController@postOrder');
 
-    Route::get('page/order/{id}','Package\OrderController@getPlan');
-    Route::get('page/order/{id}/infor',function(){
-        return view('page/infor');
-    });
+    // Route::get('page/order/{id}','Package\OrderController@getPlan');
+    // Route::get('page/order/{id}/infor',function(){
+    //     return view('page/infor');
+    // });
     Route::get('order/{id}/confirm',function(){
         return view('page/confirm');
     });
@@ -71,4 +71,11 @@ Route::group(['middleware' => ['lang']], function() {
     Route::get('/user/setting',function(){
         return view('user/manager/setting/userprofile');
     });
+});
+
+// notification
+Route::get('/send', 'SendMessageController@index')->name('send');
+Route::post('/send', 'SendMessageController@sendMessage')->name('postMessage');
+Route::get('/welcome', function () {
+    return view('welcome');
 });

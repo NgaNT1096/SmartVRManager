@@ -50,7 +50,7 @@
                                         <div>
                                             <div class="form-row license-input">
                                                 <div class="col-12 col-md-6 form-group px-2">
-                                                    <label for="start_date">Infomation Package:</label>
+                                                    <h5 for="start_date">Infomation Package:</h5>
                                                     <p class="info_order" name="info_order"></p>
                                                 </div>
                                                 <div class="col-12 col-md-6 form-group px-2 datepick" >
@@ -99,8 +99,6 @@ $(document).ready(function() {
     .click(function() {
        console.log($('input[name="datetimes"]').val());
     })
-    
-
  });
  function changeColor(){
     var clicked = true;
