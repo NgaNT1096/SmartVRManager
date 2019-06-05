@@ -48,7 +48,6 @@ class AuthController extends Controller
                 ];
                 $response = [
                     'msg' => 'success',
-                    'version'=>$version,
                     'code' => $code
                 ];
                 return response()->json($response, 200);
