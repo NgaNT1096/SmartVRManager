@@ -29,7 +29,6 @@ class AuthController extends Controller
         $password = $request->input('password');
         $version = $request->input('version');
         if ($user = User::where('email', $email)->first()){
-            if(Hash::check($password, $user->password)){
                 $code = $this->generateCode();
                     //khi login tao ma code
                     $codeOtp = new SecretOtp([
@@ -51,7 +50,6 @@ class AuthController extends Controller
                     'code' => $code
                 ];
                 return response()->json($response, 200);
-            }
 
         }
             $response = [
