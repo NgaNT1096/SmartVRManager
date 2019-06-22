@@ -22,9 +22,13 @@
     <link rel="stylesheet" href="css/order/order.css">
     <link rel="stylesheet" href="css/menu/dropmenu.css">
     <link rel="stylesheet" href="css/order/dashboard.css">
-    <link rel="stylesheet" href="css/template/button.css">
     <link rel="stylesheet" href="css/manager/dashboard.css">
     <link rel="stylesheet" href="css/manager/setting.css">
+
+    <link rel="stylesheet" href="css/template/linearicons.css">
+
+    <link rel="stylesheet" href="css/template/style.css">
+    <link rel="stylesheet" href="css/template/responsive.css">
 
     <!---*** Start: JQuery 3.3.1 version. ***--->
     <script language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -42,7 +46,6 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" crossorigin="anonymous">
 
-        
 </head>
 
 <body>
@@ -68,8 +71,9 @@
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
     <script  src="js/template/button.js"></script>
+    <script src="cdn-cgi/rocket-loader.min.js.js.php" data-cf-settings="4244c3f1d98ded40e1b73ba9-|49" defer=""></script>
     <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
         (function(){
         var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -85,7 +89,7 @@
         var im_domain = 'awio';
         var im_project_id = 48;
         (function(e,t){window._improvely=[];var n=e.getElementsByTagName("script")[0];var r=e.createElement("script");r.type="text/javascript";r.src="https://"+im_domain+".iljmp.com/improvely.js";r.async=true;n.parentNode.insertBefore(r,n);if(typeof t.init=="undefined"){t.init=function(e,t){window._improvely.push(["init",e,t])};t.goal=function(e){window._improvely.push(["goal",e])};t.conversion=function(e){window._improvely.push(["conversion",e])};t.label=function(e){window._improvely.push(["label",e])}}window.improvely=t;t.init(im_domain,im_project_id)})(document,window.improvely||[])
-    </script>
+    </script> -->
 
 </body>
 </html>

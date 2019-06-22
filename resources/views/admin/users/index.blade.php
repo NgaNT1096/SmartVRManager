@@ -26,7 +26,6 @@
 
                     </tr>
                 </thead>
-                
                 <tbody>
                     @if (count($users) > 0)
                         @foreach ($users as $user)

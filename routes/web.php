@@ -79,3 +79,7 @@ Route::post('/send', 'SendMessageController@sendMessage')->name('postMessage');
 Route::get('/welcome', function () {
     return view('welcome');
 });
+// shopping cart
+Route::get('product','Package\ProductController@index');
+Route::get('cart','Package\ProductController@cart');
+Route::get('add-to-cart/{id}','Package\ProductController@addToCart');

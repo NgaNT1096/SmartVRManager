@@ -9,9 +9,10 @@ use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
-
+use App\Http\Controllers\Traits\NotificationScopes;
 class AuthController extends Controller
 {
+    use NotificationScopes;
     public function index(){
         $users = User::all();
         return response()->json($users,200);
@@ -26,9 +27,9 @@ class AuthController extends Controller
         ]);
         $email = $request->input('email');
         $password = $request->input('password');
-        $version = $request->input('version');
         if ($user = User::where('email', $email)->first()){
             if(Hash::check($password, $user->password) ){
+                $this->removeOTP($user->id);
                 $code = $this->generateCode();
                     //khi login tao ma code
                     $codeOtp = new SecretOtp([
@@ -37,6 +38,7 @@ class AuthController extends Controller
                         'max_device'=> 6,
                         'num_request' => 0
                     ]);
+                   $this->getSendMessage($user->name,$user->name,$user->email);
                     if($code !== null){
                         $codeOtp->save();
                     }
@@ -60,12 +62,16 @@ class AuthController extends Controller
     }
 
     public function logout($userid){
-        $code_otp = CodeOtp::where('user_id', $userid)->first();
+        $code_otp = SecretOtp::where('user_id', $userid)->first();
+        $code_opt->delete();
         $mytime = date("Y-m-d H:i:s");
 
         $expires = clone $code_otp->created_at;
         $expires->addHours(1);
         var_dump($expires);
+    }
+    public function removeOTP($userid){
+        $code_otp = SecretOtp::where('user_id', $userid)->delete();
     }
     public function getExpiresAttribute() {
         $expires = clone $this->created_at;

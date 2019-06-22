@@ -15,13 +15,11 @@ class Order extends Model // tuong tu voi cart
         return $this->belongsTo('App\Model\Package\Plan','plan_id');
     }
     public function add($plan, $id){
-        
     }
     public function calculateDay($date_start, $date_end){
         //Convert them to timestamps.
         $date1Timestamp = strtotime($date_start);
         $date2Timestamp = strtotime($date_end);
-        
         //Calculate the difference.
         $difference = $date2Timestamp - $date1Timestamp;
         return $difference;
