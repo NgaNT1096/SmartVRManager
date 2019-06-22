@@ -196,9 +196,6 @@ return [
         //laravel-log
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
 
-        //debug
-        // Barryvdh\Debugbar\ServiceProvider::class,
-        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
     ],
 
     /*
@@ -253,8 +250,7 @@ return [
         'Image'        => Intervention\Image\Facades\Image::class,
         'Form'         => Collective\Html\FormFacade::class,
         'Html'         => Collective\Html\HtmlFacade::class,
-        // 'Debugbar' => Barryvdh\Debugbar\Facade::class,
-        'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+
     ],
 
 ];
