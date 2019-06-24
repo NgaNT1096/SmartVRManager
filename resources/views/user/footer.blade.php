@@ -42,7 +42,7 @@
                 <div class="col-md-12 text-center">
                     <p>
                         Copyright &copy;
-                        <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js.js.php"></script>
+                        <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
                         <script type="4244c3f1d98ded40e1b73ba9-text/javascript">
                             document.write(new Date().getFullYear());
                         </script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Holomia</a>
