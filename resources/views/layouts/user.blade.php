@@ -55,19 +55,19 @@
 
     @include('user.footer')
 
-    <script src="js/home/jquery-migrate-3.0.1.min.js.js.php" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
-    <script src="js/home/popper.min.js.js.php" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
-    <script src="js/home/bootstrap.min.js.js.php" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
-    <script src="js/home/jquery.easing.1.3.js.js.php" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
-    <script src="js/home/jquery.waypoints.min.js.js.php" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
-    <script src="js/home/jquery.stellar.min.js.js.php" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
-    <script src="js/home/owl.carousel.min.js.js.php" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
-    <script src="js/home/jquery.magnific-popup.min.js.js.php" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
-    <script src="js/home/aos.js.js.php" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
-    <script src="js/home/jquery.animateNumber.min.js.js.php" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
+    <script src="js/home/jquery-migrate-3.0.1.min.js" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
+    <script src="js/home/popper.min.js" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
+    <script src="js/home/bootstrap.min.js" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
+    <script src="js/home/jquery.easing.1.3.js" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
+    <script src="js/home/jquery.waypoints.min.js" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
+    <script src="js/home/jquery.stellar.min.js" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
+    <script src="js/home/owl.carousel.min.js" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
+    <script src="js/home/jquery.magnific-popup.min.js" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
+    <script src="js/home/aos.js" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
+    <script src="js/home/jquery.animateNumber.min.js" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
 
     <script src="js/home/scrollax.min.js" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
-    <script src="js/home/main.js.js.php" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
+    <script src="js/home/main.js" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="4244c3f1d98ded40e1b73ba9-text/javascript"></script>
     <script  src="js/template/button.js"></script>
