@@ -1,6 +1,6 @@
 <?php
 Route::get('/', function () { return redirect('/home'); });
-
+Route::get('/landingpage', function () { return view('landingpage2'); });
 // Authentication Routes...
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('auth.login');
 $this->post('login', 'Auth\LoginController@login')->name('auth.login');
