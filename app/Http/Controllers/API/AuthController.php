@@ -9,10 +9,10 @@ use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
-use App\Http\Controllers\Traits\NotificationScopes;
+
 class AuthController extends Controller
 {
-    use NotificationScopes;
+
     public function index(){
         $users = User::all();
         return response()->json($users,200);
@@ -38,7 +38,6 @@ class AuthController extends Controller
                         'max_device'=> 6,
                         'num_request' => 0
                     ]);
-                   $this->getSendMessage($user->name,$user->name,$user->email);
                     if($code !== null){
                         $codeOtp->save();
                     }
