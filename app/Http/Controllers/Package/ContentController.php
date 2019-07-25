@@ -74,7 +74,7 @@ class ContentController extends Controller
             
             if ($request->file('link')->isValid()) {
                 $fileupload = $request->file('link');
-                $name = str_slug($request->link).'.'.$fileupload->getClientOriginalExtension();
+                $name = str_slug($request->title).'.'.$fileupload->getClientOriginalExtension();
                 $destinationPath = public_path('/uploads');
                 $imagePath = $destinationPath. "/".  $name;
                 $fileupload->move($destinationPath, $name);

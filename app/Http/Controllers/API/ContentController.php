@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Gate;
 use App\Config\constant;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 class ContentController extends Controller
 {
     public function download($id){
@@ -19,24 +19,13 @@ class ContentController extends Controller
         $file = public_path()."/" . $content->link ;
         return response()->download($file);
     }
-    // public function api_content($otp){
-    //     if( SecretOtp::where('code',$otp)->first() !== null){
-    //         $contents = Content::all();
-    //         foreach($contents as $content){
-    //             $content->url_download =  URL::to('/') .$content->link;
-    //         }
-    //         return response()->json($contents, 200);
-    //     }else{
-    //         return response()->json("not found data", 404);
-    //     }
-    // }
     public function api_content($otp){
         if( SecretOtp::where('code',$otp)->first() !== null){
             $user_model = User::findOrFail(Auth::getUser()->id);
             if(Auth::user()->name === 'Admin'){
                 $contents = Content::all();
             }else{
-                $contents = Content::all();
+                $contents = Content::where('created_by_id',Auth::getUser()->id)->get();
             }
 
             foreach($contents as $content){
@@ -58,11 +47,13 @@ class ContentController extends Controller
                 $codeOtp->num_request += 1;
                 $codeOtp->save();
 
+                $user_login = $codeOtp->user_id;
+
                 if( $codeOtp->num_request <= $codeOtp->max_device ){
                     if($codeOtp->user_id === 1){
                         $contents = Content::all();
                     }else{
-                        $contents = Content::where('user_id',$codeOtp->user_id)->get();
+                        $contents = Content::where('created_by_id',$user_login)->get();
                     }
                     return response()->json($contents, 200);
                 }else{
