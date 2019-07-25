@@ -18,16 +18,6 @@
                         <input id="title" class="form-control" value="{{$content->title}}" name="title" placeholder="Please Enter Title name" />
                     </div>
                     <div class="form-group">
-                        <label>Type Content</label>
-                        <div class="dropdown">
-                            <select id="type_data" class="btn btn-default dropdown-toggle"  name="type_data" type="button" data-toggle="dropdown">
-                                <option value="video"> Video </option>
-                                <option value="image"> Image 360</option>
-                                <option value="assetbundel"> AssetBundel </option>
-                            </select>
-                        </div>   
-                    </div>
-                    <div class="form-group">
                         <label>Description:</label>
                         <textarea id="description" class="form-control" name="description" rows="3">{{$content->description}}</textarea>
                     </div>

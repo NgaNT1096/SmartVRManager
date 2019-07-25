@@ -4,7 +4,7 @@ namespace App\Http\Requests\Package;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class addContentRequest extends FormRequest
+class updateContentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,9 @@ class addContentRequest extends FormRequest
     public function rules()
     {
         return [
-            
+            'title' => 'required|string|max:255|unique:contents',
+            'description' => 'required|string|max:255',
+            'price' =>'required',
         ];
     }
 }

@@ -8,7 +8,8 @@ use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Gate;
 use App\Model\Package\Content;
 use App\Model\Package\Theme;
-use App\Http\Requests\package\StoreContentRequest;
+use App\Http\Requests\Package\StoreContentRequest;
+use App\Http\Requests\Package\updateContentRequest;
 use Illuminate\Support\Facades\Validator;
 use App\Config\constant;
 use Illuminate\Support\Facades\URL;
@@ -73,7 +74,7 @@ class ContentController extends Controller
             
             if ($request->file('link')->isValid()) {
                 $fileupload = $request->file('link');
-                $name = $fileupload->getClientOriginalName();
+                $name = str_slug($request->link).'.'.$fileupload->getClientOriginalExtension();
                 $destinationPath = public_path('/uploads');
                 $imagePath = $destinationPath. "/".  $name;
                 $fileupload->move($destinationPath, $name);
@@ -126,15 +127,13 @@ class ContentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRolesRequest $request, $id)
+    public function update(updateContentRequest $request, $id)
     {
         if (! Gate::allows(config('constants.CONTENT_PERMISSION'))) {
             return abort(401);
         }
         $content = Content::findOrFail($id);
-        $content->update($request->except('theme'));
-        $theme = $request->input('theme') ? $request->input('theme') : [];
-        $content->syncPermissions($theme);
+        $content->update($request->all());
 
         return redirect()->route('admin.content.index');
     }
