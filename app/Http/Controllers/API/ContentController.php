@@ -61,7 +61,7 @@ class ContentController extends Controller
                        $data_detail[] = [
                             'id' => $content->id,
                             'name' => $content->title,
-                            'link' => public_path()."/api/content/detail/" . $content->id,
+                            'link' => "http://smartvr.holomia.com/api/content/detail/" . $content->id,
                        ];
                     }
                     return response()->json( $data_detail, 200);
@@ -82,7 +82,7 @@ class ContentController extends Controller
     public function get_detail_content($id){
         $content = Content::findOrFail($id);
 
-            $file = public_path()."/" . $content->link ;
+            $file = "http://smartvr.holomia.com/api/content/detail/" . $content->link ;
             return response()->json($file,200);
         
     }
