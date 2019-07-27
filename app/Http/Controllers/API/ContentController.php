@@ -12,9 +12,7 @@ use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Gate;
 use App\Config\constant;
 use Auth;
-use Exception;
-use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 class ContentController extends Controller
 {
     public function download($id){
@@ -63,7 +61,7 @@ class ContentController extends Controller
                        $data_detail[] = [
                             'id' => $content->id,
                             'name' => $content->title,
-                            'link' => public_path()."/api/content/detail/" .$otp .'/' . $content->id,
+                            'link' => public_path()."/api/content/detail/" . $content->id,
                        ];
                     }
                     return response()->json( $data_detail, 200);
@@ -81,8 +79,9 @@ class ContentController extends Controller
             return response()->json("The device is not authorized to access") ;
         }
     }
-    public function get_detail_content($id, Exception $exception){
-             $content = Content::findOrFail($id);
+    public function get_detail_content($id){
+        $content = Content::findOrFail($id);
+
             $file = public_path()."/" . $content->link ;
             return response()->json($file,200);
         
