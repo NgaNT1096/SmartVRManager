@@ -80,10 +80,13 @@ class ContentController extends Controller
         }
     }
     public function get_detail_content($id){
-        $content = Content::findOrFail($id);
-
+            $content = Content::findOrFail($id);
             $file = "http://smartvr.holomia.com/api/content/detail/" . $content->link ;
-            return response()->json($file,200);
+
+            $response = [
+                'link' => $file
+            ];
+            return response()->json($response,200);
         
     }
 }
