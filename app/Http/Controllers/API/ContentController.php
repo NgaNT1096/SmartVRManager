@@ -12,12 +12,15 @@ use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Gate;
 use App\Config\constant;
 use Auth;
+use Exception;
+use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 class ContentController extends Controller
 {
     public function download($id){
         $content = Content::find($id);
         $file = public_path()."/" . $content->link ;
-        return response()->download($file);
+        return response()->json($file,200);
     }
     public function api_content($otp){
         if( SecretOtp::where('code',$otp)->first() !== null){
@@ -48,14 +51,22 @@ class ContentController extends Controller
                 $codeOtp->save();
 
                 $user_login = $codeOtp->user_id;
-
+                $data_detail = [];
                 if( $codeOtp->num_request <= $codeOtp->max_device ){
                     if($codeOtp->user_id === 1){
                         $contents = Content::all();
                     }else{
                         $contents = Content::where('created_by_id',$user_login)->get();
                     }
-                    return response()->json($contents, 200);
+                    foreach( $contents as $content){
+                       // $links->put('link',public_path()."/download/" .$otp .'/' . $content->id);
+                       $data_detail[] = [
+                            'id' => $content->id,
+                            'name' => $content->title,
+                            'link' => public_path()."/api/content/detail/" .$otp .'/' . $content->id,
+                       ];
+                    }
+                    return response()->json( $data_detail, 200);
                 }else{
                     $codeOtp->delete();
                     //khi so truy cap vuot qua gioi han thi k tra ve du lieu nua
@@ -69,5 +80,11 @@ class ContentController extends Controller
         }else{
             return response()->json("The device is not authorized to access") ;
         }
+    }
+    public function get_detail_content($id, Exception $exception){
+             $content = Content::findOrFail($id);
+            $file = public_path()."/" . $content->link ;
+            return response()->json($file,200);
+        
     }
 }
