@@ -10,7 +10,8 @@ class Content extends Model
         'title',
         'description',
         'type_data',
-        'link',
+        'link_4k',
+        'link_2k',
         'price',
         'theme_id',
         'created_by_id'

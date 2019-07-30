@@ -64,7 +64,8 @@ class ContentController extends Controller
             'description' => 'required|string|max:255',
             'type_data' => 'required',
             'price' =>'required',
-            'link' =>'required',
+            'link_4k' =>'required',
+            'link_2k' =>'required',
             'theme_id' => 'required'
         ]);
         if ($validator->fails()) {
@@ -72,13 +73,19 @@ class ContentController extends Controller
         }else {
             $content = new Content;
             
-            if ($request->file('link')->isValid()) {
-                $fileupload = $request->file('link');
-                $name = str_slug($request->title).'.'.$fileupload->getClientOriginalExtension();
-                $destinationPath = public_path('/uploads');
-                $imagePath = $destinationPath. "/".  $name;
-                $fileupload->move($destinationPath, $name);
-                $content->link = "/uploads/".$name;
+            if ($request->file('link_4k')->isValid()) {
+                $file_4k = $request->file('link_4k');
+                $name_4k = str_slug($request->title).'.'.$file_4k->getClientOriginalExtension();
+                $destinationPath_4k = public_path('/uploads/4k');
+                $file_4k->move($destinationPath_4k, $name_4k);
+                $content->link_4k = "/uploads/4k/".$name_4k;
+
+                $file_2k = $request->file('link_2k');
+                $name_2k = str_slug($request->title).'.'.$file_2k->getClientOriginalExtension();
+                $destinationPath_2k = public_path('/uploads/2k');
+                $file_2k->move($destinationPath_2k, $name_2k);
+                $content->link_2k = "/uploads/2k/".$name_2k;
+
             }
                
                 $content->title = $request->input('title');

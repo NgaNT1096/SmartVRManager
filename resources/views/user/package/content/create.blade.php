@@ -44,8 +44,12 @@
                         <textarea id="description" class="form-control" name="description" rows="3"></textarea>
                     </div>
                     <div class="form-group">
-                        <label>Upload Video</label>
-                        <input id="link" onclick="getTypeData();" type="file" name="link" accept="">
+                        <label>Upload Video 4K</label>
+                        <input class="link" id="link_4k" onclick="getTypeData();" type="file" name="link_4k" accept="">
+                    </div>
+                    <div class="form-group">
+                        <label>Upload Video 2K</label>
+                        <input class="link" id="link_2k" onclick="getTypeData();" type="file" name="link_2k" accept="">
                     </div>
                     <div class="form-group">
                         <label>Price:</label>
@@ -69,13 +73,13 @@
 
         console.log(value_type);
         if(value_type == 'video'){
-            document.getElementById("link").accept = ".mp4";
+            document.getElementsByClassName("link").accept = ".mp4";
         }
         else if(value_type == 'image'){
-            document.getElementById("link").accept = "image/*";
+            document.getElementsByClassName("link").accept = "image/*";
         }
         else{
-            document.getElementById("link").accept = ".zip";
+            document.getElementsByClassName("link").accept = ".zip";
             
         }
     }

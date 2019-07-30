@@ -15,8 +15,8 @@
 
                 <ul class="nav-user navbar-nav right">
                     @if (Auth::guest())
-                    <li class=" nav-item"><a href="{{ url('/login') }}" class="nav-link">{{ trans('home.signin') }}</a></li>
-                    <li class=" nav-item cta mr-md-2"><a href="{{ url('/register') }}" class="nav-link">{{ trans('home.signout') }}</a></li>
+                    <li class=" nav-item cta mr-md-2"><a href="{{ url('/login') }}" class="nav-link">{{ trans('home.signin') }}</a></li>
+                    <li class=" nav-item "><a href="{{ url('/register') }}" class="nav-link">{{ trans('home.signout') }}</a></li>
                     <li class=" navbar-nav nav-item flat">
                         <a href="{{url(Request::getPathInfo().'?lang=en')}}"><img src="images/flat/en.png"></a>
                         <a href="{{url(Request::getPathInfo().'?lang=vn')}}"><img src="images/flat/vn.png"></a>

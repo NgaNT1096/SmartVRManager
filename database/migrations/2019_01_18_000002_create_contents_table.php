@@ -18,7 +18,8 @@ class CreateContentsTable extends Migration
             $table->string('title');
             $table->string('description');
             $table->string('type_data');
-            $table->string('link');
+            $table->string('link_4k');
+            $table->string('link_2k');
             $table->float('price');
 
             $table->integer('theme_id')->unsigned()->nullable();

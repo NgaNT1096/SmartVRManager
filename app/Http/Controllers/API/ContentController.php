@@ -81,10 +81,12 @@ class ContentController extends Controller
     }
     public function get_detail_content($id){
             $content = Content::findOrFail($id);
-            $file = "http://smartvr.holomia.com" . $content->link ;
+            $file_4k = "http://smartvr.holomia.com" . $content->link_4k;
+            $file_2k = "http://smartvr.holomia.com" . $content->link_2k;
 
             $response = [
-                'link' => $file
+                'link_4k' => $file_4k,
+                'link_2k' => $file_2k
             ];
             return response()->json($response,200);
         
